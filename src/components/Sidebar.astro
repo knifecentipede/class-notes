@@ -5,7 +5,7 @@
 <aside box-="square contain:!top" class="box">
     <span is-="badge" variant-="background0">Contents</span>
 
-    <div>
+    <div id="inside">
         <summary>notes</summary>
         <ul marker-="open tree">
             <li><a href="/html/">HTML</a></li>
@@ -52,17 +52,19 @@
 
 <style>
     aside {
-        /* width: 100%; */
-        /* max-width: 32ch; */
-        width: 20ch;
+        /* width: 24ch; */
+        min-width: 24ch;
+        padding-bottom: 3lh;
         /* border: 1px solid green; */
     }
 
-    div {
+    #inside {
         overflow-y: auto;
         overflow-x: hidden;
-        height: 23lh;
-        padding: 1ch;
+        max-height: 100%;
+        /* padding-right: 1ch; */
+        padding-left: 1ch;
+        margin-top: 1lh;
         /* border: 2px dotted red; */
     }
 
