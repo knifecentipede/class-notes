@@ -1,8 +1,11 @@
 ---
-
+// put into global layout later
+import Sidebar from "../components/Sidebar.astro";
+import Article from "../components/Article.astro";
+import "../styles/global.css";
 ---
 
-<html lang="en">
+<html lang="en" data-webtui-theme="gruvbox-dark-medium">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -10,7 +13,29 @@
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
 	</head>
+
 	<body>
-		<h1>Astro</h1>
+		<Sidebar />
+		<Article />
 	</body>
 </html>
+
+<style>
+	body {
+		display: flex;
+		column-gap: 1ch;
+		row-gap: 1lh;
+		padding-top: 1lh;
+		padding-bottom: 1lh;
+		padding-left: 2ch;
+		padding-right: 2ch;
+	}
+
+	html,
+	body {
+		/* for testing overflow */
+		/* height: 50vh; */
+		height: 100vh;
+		width: 100vw;
+	}
+</style>

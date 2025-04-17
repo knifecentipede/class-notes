@@ -9,6 +9,8 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@webtui/css": "^0.0.3",
+    "@webtui/theme-gruvbox": "^0.0.1",
     "astro": "^5.7.2"
   }
 }
