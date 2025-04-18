@@ -4,6 +4,7 @@
 
 <aside box-="square contain:!top" class="box">
     <span is-="badge" variant-="background0">Contents</span>
+    <!-- <span is-="badge" variant-="background0">testtesttesttesttesttesttesttesttesttesttest</span> -->
 
     <div id="inside">
         <summary>notes</summary>
@@ -24,29 +25,43 @@
         </ul>
 
         
-        <br />
+        <!-- <br />
+        <summary>test dimensions dimensions dimensions</summary>
         <summary>test dimensions</summary>
+        <summary>testtesttesttesttesttesttesttest</summary>
         <ul marker-="open tree">
             <li><a href="/test/">test</a></li>
-        </ul>
+            <li><a href="/test/"></a></li>
+            <li><a href="/test/">test</a></li>
+            <li><a href="/test/">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a></li>
+            <li><a href="/test/">aaaaaaaa aaaaaaaaaa aaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaa</a></li>
+            <li><a href="/test/">test</a></li>
+            <li><a href="/test/">test</a></li>
+            <li><a href="/test/">test</a></li>
+        </ul> -->
         
     </div>
 </aside>
 
 <style>
+    span {
+        overflow-x: hidden;
+        max-width: 27ch;
+    }
+
     aside {
         /* is this width really right? */
-        min-width: 24ch;
+        width: 30ch;
         padding-bottom: 3lh;
         /* border: 1px solid green; */
     }
 
     #inside {
         overflow-y: auto;
-        overflow-x: hidden;
         max-height: 100%;
         padding-left: 1ch;
         margin-top: 1lh;
+        width: 27ch;
         /* border: 2px dotted red; */
     }
 
