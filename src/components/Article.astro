@@ -14,30 +14,40 @@
 
 <style>
     article {
+        /* article resizes to take up all remaining space */
+        /* while sidebar doesn't */
         width: 100%;
+        /* keep red content inside box */
+        /* aligned with sidebar */
         padding-bottom: 2lh;
-        /* overflow-y: hidden; */
 
-        /* makes overflow red and green not extend beyond border */
+        /* when there's a very long word */
+        /* overflow-x makes red and green border not extend */
         overflow-x: hidden;
-        border: 2px solid green;
+        /* overflow-y removes body scroll bar */
         overflow-y: hidden;
+        /* pulls up the box border? */
+        height: 94vh;
 
-        /* this pulls up the box border? */
-        height: 90vh;
+        /* dev dimensions scaffolding */
+        /* border: 2px solid green; */
     }
 
     #page-content {
-        /* makes overflow text not clip into box border */
+        /* overflow-y gives red bar scroll */
+        /* and keeps bottom text inside red box */
         overflow-y: auto;
-        /* padding: 2ch; */
+        /* visual */
+        padding: 2ch;
+        /* not sure what it does */
         text-wrap: wrap;
-        border: 2px dotted red;
 
-        /* max-height: 100%; */
-        /* height: 100vh; */
-        /* height: 80vh; */
+        /* red's height matches green parent */
+        /* rather than its own content */
         height: 100%;
+
+        /* dev dimensions scaffolding */
+        /* border: 2px dotted red; */
     }
 
     .box {

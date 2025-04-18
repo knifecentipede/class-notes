@@ -15,24 +15,23 @@ import "../styles/global.css";
     </head>
 
     <body>
-        <!-- FLOW HELL -->
-        <section id="outer">
+        <!-- divs used to be sections in testing.-->
+        <!-- does it look different? -->
+        <div id="outer">
             <Header />
-            <section id="inner">
+            <div id="inner">
                 <Sidebar />
-                <!-- <p>flow test</p> -->
                 <Article>
                     <slot />
                 </Article>
-            </section>
-        </section>
+            </div>
+        </div>
     </body>
 </html>
 
 <style>
     body {
         /* FLOW HELL */
-        /* display: flex; */
         /* column-gap: 1ch; */
         /* row-gap: 1lh; */
         /* padding-top: 1lh; */
@@ -41,33 +40,35 @@ import "../styles/global.css";
         /* padding-right: 2ch; */
     }
 
+    /* FLOW HELL */
     html,
     body {
-        /* FLOW HELL */
         display: block;
-        /* overflow-x: hidden; */
+        /* if window resized too much vertically */
+        /* would create a window scroll bar */
+        /* right now it's no good */
         overflow-y: hidden;
-
-        /* height: 100vh; */
-        /* width: 100vw; */
     }
 
-    body {
-    }
-
-    /* FLOW HELL */
     #outer {
-        /* border: 2px solid purple; */
+        /* nav and content are vertical */
         display: block;
+
+        /* dev dimensions scaffolding */
+        /* border: 3px solid purple; */
     }
+
     #inner {
-        /* border: 3px solid orange; */
+        /* but boxes are horizonal */
         display: flex;
 
-        /* height: 100vh; */
-    }
-    /* testing element to delete */
-    p {
-        width: 30ch;
+        /* visual */
+        column-gap: 1ch;
+        row-gap: 1lh;
+        padding-left: 1ch;
+        padding-right: 1ch;
+
+        /* dev dimensions scaffolding */
+        /* border: 3px solid orange; */
     }
 </style>
