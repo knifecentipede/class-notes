@@ -1,4 +1,5 @@
 ---
+import Header from "../components/Header.astro";
 import Sidebar from "../components/Sidebar.astro";
 import Article from "../components/Article.astro";
 import "../styles/global.css";
@@ -14,28 +15,59 @@ import "../styles/global.css";
     </head>
 
     <body>
-        <Sidebar />
-        <Article>
-            <slot />
-        </Article>
+        <!-- FLOW HELL -->
+        <section id="outer">
+            <Header />
+            <section id="inner">
+                <!-- <Sidebar /> -->
+                <p>flow test</p>
+                <Article>
+                    <slot />
+                </Article>
+            </section>
+        </section>
     </body>
 </html>
 
 <style>
     body {
-        display: flex;
-        column-gap: 1ch;
-        row-gap: 1lh;
-        padding-top: 1lh;
-        padding-bottom: 1lh;
-        padding-left: 2ch;
-        padding-right: 2ch;
+        /* FLOW HELL COMMENT */
+        /* display: flex; */
+        /* column-gap: 1ch; */
+        /* row-gap: 1lh; */
+        /* padding-top: 1lh; */
+        /* padding-bottom: 1lh; */
+        /* padding-left: 2ch; */
+        /* padding-right: 2ch; */
+
+        /* FLOW HELL CSS */
     }
 
     html,
     body {
-        height: 100vh;
-        width: 100vw;
-        overflow-x: hidden;
+        display: block;
+        /* height: 100vh; */
+        /* width: 100vw; */
+        /* overflow-x: hidden; */
+        overflow-y: hidden;
+    }
+
+    body {
+    }
+
+    /* FLOW HELL CSS */
+    #outer {
+        border: 2px solid purple;
+        display: block;
+
+
+    }
+    #inner {
+        border: 3px solid orange;
+        /* height: 100vh; */
+        display: flex;
+    }
+    p {
+        width: 30ch;
     }
 </style>
