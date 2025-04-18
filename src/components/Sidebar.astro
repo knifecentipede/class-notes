@@ -3,7 +3,10 @@
 ---
 
 <aside box-="square contain:!top" class="box">
-    <span is-="badge" variant-="background0">Contents</span>
+    <!-- <span is-="badge" variant-="background0">Contents</span> -->
+    <span is-="badge" variant-="background0"
+        >ConContentsContentsContentsContentsContentsContentsContentsContentstents</span
+    >
 
     <div id="inside">
         <summary>notes</summary>
@@ -28,6 +31,24 @@
         <summary>test area</summary>
         <ul marker-="open tree">
             <li><a href="/test/">test</a></li>
+            <li><a href="/test/">test</a></li>
+            <li><a href="/test/">test</a></li>
+            <li><a href="/test/">testtttttttttttttttttttttttt</a></li>
+            <li><a href="/test/">testtttttttttttttttt ttttttt</a></li>
+            <li><a href="/test/">test</a></li>
+            <li><a href="/test/">test</a></li>
+            <li><a href="/test/">test</a></li>
+            <li><a href="/test/">test</a></li>
+            <li><a href="/test/">test</a></li>
+            <li><a href="/test/">test</a></li>
+            <li><a href="/test/">test</a></li>
+            <li><a href="/test/">test</a></li>
+            <li><a href="/test/">test</a></li>
+            <li><a href="/test/">test</a></li>
+            <li><a href="/test/">test</a></li>
+            <li><a href="/test/">test</a></li>
+            <li><a href="/test/">test</a></li>
+            <li><a href="/test/">test</a></li>
         </ul>
     </div>
 </aside>
@@ -42,19 +63,25 @@
         /* is this width really right? */
         width: 30ch;
         padding-bottom: 3lh;
-        /* border: 1px solid green; */
+        border: 2px solid green;
+
+        height: 90vh;
     }
 
     #inside {
         overflow-y: auto;
-        max-height: 100%;
         padding-left: 1ch;
         margin-top: 1lh;
         width: 27ch;
-        /* border: 2px dotted red; */
+        border: 2px dotted red;
+
+        /* height: 80vh; */
+        /* max-height: 100%; */
+        /* height: 26lh; */
+        height: 100%;
     }
 
     .box {
-        --box-border-color: var(--background1);
+        /* --box-border-color: var(--background1); */
     }
 </style>

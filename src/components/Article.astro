@@ -15,27 +15,29 @@
 <style>
     article {
         width: 100%;
-        /* padding-bottom: 2lh; */
+        padding-bottom: 2lh;
         /* overflow-y: hidden; */
 
         /* makes overflow red and green not extend beyond border */
         overflow-x: hidden;
         border: 2px solid green;
-
         overflow-y: hidden;
+
+        /* this pulls up the box border? */
+        height: 90vh;
     }
 
     #page-content {
         /* makes overflow text not clip into box border */
         overflow-y: auto;
+        /* padding: 2ch; */
+        text-wrap: wrap;
+        border: 2px dotted red;
 
         /* max-height: 100%; */
         /* height: 100vh; */
-        height: 80vh;
-
-        padding: 2ch;
-        text-wrap: wrap;
-        border: 2px dotted red;
+        /* height: 80vh; */
+        height: 100%;
     }
 
     .box {
