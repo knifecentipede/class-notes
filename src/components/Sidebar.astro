@@ -58,6 +58,8 @@
         overflow-y: auto;
         /* visual */
         padding-left: 1ch;
+        padding-right: 2ch;
+
         margin-top: 1lh;
         /* content slightly narrower than container */
         width: 27ch;
@@ -72,5 +74,20 @@
 
     .box {
         --box-border-color: var(--background1);
+    }
+
+    /* shiny navigation highlight */
+    ul li:hover,
+    ul li:focus {
+        background-color: var(--background1);
+        a {
+            color: var(--gb-purple);
+        }
+    }
+
+    /* please do not break my stuff */
+    li a {
+        display: inline-block;
+        width: calc(100% - 2ch);
     }
 </style>
