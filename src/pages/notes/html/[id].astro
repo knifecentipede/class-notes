@@ -4,19 +4,19 @@ import GlobalLayout from "../../../layouts/GlobalLayout.astro";
 import { getCollection, render } from 'astro:content';
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
-  const posts = await getCollection('posts');
-  return posts.map(post => ({
-    params: { id: post.id },
-    props: { post },
+  const notesHtml = await getCollection('notesHtml');
+  return notesHtml.map(note => ({
+    params: { id: note.id },
+    props: { note },
   }));
 }
 // 2. For your template, you can get the entry directly from the prop
-const { post } = Astro.props;
-const { Content } = await render(post);
+const { note } = Astro.props;
+const { Content } = await render(note);
 ---
 
 <GlobalLayout>
-<h1>{post.data.title}</h1>
+<h1>{note.data.title}</h1>
 <Content />
 
 </GlobalLayout>

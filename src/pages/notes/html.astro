@@ -2,15 +2,15 @@
 import GlobalLayout from "../../layouts/GlobalLayout.astro";
 
 import { getCollection } from "astro:content";
-const posts = await getCollection("posts");
+const notes = await getCollection("notesHtml");
 ---
 
 <GlobalLayout>
     <ul>
         {
-            posts.map((post) => (
+            notes.map((note) => (
                 <li>
-                    <a href={`/notes/html/${post.id}`}>{post.data.title}</a>
+                    <a href={`/notes/html/${note.id}`}>{note.data.title}</a>
                 </li>
             ))
         }
