@@ -3,6 +3,7 @@ import Header from "../components/Header.astro";
 import Sidebar from "../components/Sidebar.astro";
 import Article from "../components/Article.astro";
 import "../styles/global.css";
+const { pageTitle } = Astro.props;
 ---
 
 <html lang="en" data-webtui-theme="gruvbox-dark-soft">
@@ -11,7 +12,7 @@ import "../styles/global.css";
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
-        <title>Astro</title>
+        <title>{pageTitle}</title>
     </head>
 
     <body>
