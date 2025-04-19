@@ -1,0 +1,8 @@
+---
+import GlobalLayout from "./GlobalLayout.astro";
+const { frontmatter, title } = Astro.props;
+---
+
+<GlobalLayout title={title}>
+    <slot />
+</GlobalLayout>

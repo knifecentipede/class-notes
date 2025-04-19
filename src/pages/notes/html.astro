@@ -1,8 +1,7 @@
 ---
 import GlobalLayout from "../../layouts/GlobalLayout.astro";
-
 import { getCollection } from "astro:content";
-const notes = await getCollection("notesHtml");
+const notes = await getCollection(`notesHtml`);
 ---
 
 <GlobalLayout title=`/notes/html`>

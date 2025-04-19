@@ -11,7 +11,15 @@ const notesHtml = defineCollection({
     })
 });
 
+const notesCss = defineCollection({
+    /* Retrieve all Markdown files in your pages directory. */
+    loader: glob({ pattern: "**/*.md", base: "./src/content/css" }),
+    schema: z.object({
+        title: z.string(),
+    })
+});
+
 // Export a single `collections` object to register your collection(s)
 export const collections = {
-    notesHtml
+    notesHtml, notesCss
 };

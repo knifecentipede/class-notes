@@ -1,7 +1,42 @@
 ---
 import GlobalLayout from "../../layouts/GlobalLayout.astro";
+import { getCollection } from "astro:content";
+const notes = await getCollection(`notesCss`);
 ---
 
 <GlobalLayout title=`/notes/css`>
-    <p>Make a content collection and display here</p>
+    <ul>
+        {
+            notes.map((note) => (
+                <li>
+                    <a href={`/notes/css/${note.id}`}>/{note.data.title}</a>
+                </li>
+            ))
+        }
+    </ul>
 </GlobalLayout>
+
+<style>
+    ul {
+        list-style-type: none;
+    }
+
+    ul li::before {
+        content: "";
+    }
+
+    /* shiny navigation highlight */
+    ul li:hover,
+    ul li:focus {
+        background-color: var(--background1);
+        a {
+            color: var(--gb-purple);
+        }
+    }
+
+    /* please do not break my stuff */
+    ul li a {
+        display: block;
+        width: 100%;
+    }
+</style>
