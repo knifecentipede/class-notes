@@ -1,0 +1,8 @@
+---
+import GlobalLayout from "./GlobalLayout.astro";
+const { frontmatter, path } = Astro.props;
+---
+
+<GlobalLayout path=`${frontmatter.path}${frontmatter.title}`>
+    <slot />
+</GlobalLayout>

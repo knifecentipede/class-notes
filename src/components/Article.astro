@@ -1,11 +1,11 @@
 ---
 // Usage: <Article title="# /dir/title" />
-const { title } = Astro.props;
+const { path } = Astro.props;
 ---
 
 <article box-="square contain:!top" class="box">
     <span is-="badge" variant-="background0">
-        <h1>{title}</h1>
+        <h1>{path}</h1>
     </span>
 
     <div id="page-content">

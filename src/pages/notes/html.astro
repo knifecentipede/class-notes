@@ -4,7 +4,7 @@ import { getCollection } from "astro:content";
 const notes = await getCollection(`notesHtml`);
 ---
 
-<GlobalLayout title=`/notes/html`>
+<GlobalLayout path=`/notes/html`>
     <ul>
         {
             notes.map((note) => (
