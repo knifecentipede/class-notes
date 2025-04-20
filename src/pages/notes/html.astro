@@ -1,11 +1,12 @@
 ---
+import "../../styles/dir.css";
 import GlobalLayout from "../../layouts/GlobalLayout.astro";
 import { getCollection } from "astro:content";
 const notes = await getCollection(`notesHtml`);
 ---
 
-<GlobalLayout path=`/notes/html`>
-    <ul>
+<GlobalLayout path=`${Astro.url.pathname}`>
+    <ul class="dir">
         {
             notes.map((note) => (
                 <li>
@@ -16,6 +17,7 @@ const notes = await getCollection(`notesHtml`);
     </ul>
 </GlobalLayout>
 
+<!-- 
 <style>
     ul {
         list-style-type: none;
@@ -39,4 +41,4 @@ const notes = await getCollection(`notesHtml`);
         display: block;
         width: 100%;
     }
-</style>
+</style> -->

@@ -1,0 +1,23 @@
+.dir {
+    list-style-type: none;
+}
+
+.dir li::before {
+    content: "";
+}
+
+/* shiny navigation highlight */
+.dir li:hover,
+.dir li:focus {
+    background-color: var(--background1);
+
+    a {
+        color: var(--gb-purple);
+    }
+}
+
+/* please do not break my stuff */
+.dir li a {
+    display: block;
+    width: 100%;
+}

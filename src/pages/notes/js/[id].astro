@@ -3,10 +3,10 @@
 import NoteLayout from "../../../layouts/NoteLayout.astro";
 
 import { getCollection, render } from "astro:content";
-// 1. Generate a new path for every collection entry
+// 1. Generate a new path for every collection entsry
 export async function getStaticPaths() {
-  const notesCss = await getCollection("notesCss");
-  return notesCss.map((note) => ({
+  const notesJs = await getCollection("notesJs");
+  return notesJs.map((note) => ({
     params: { id: note.id },
     props: { note },
   }));
@@ -16,6 +16,7 @@ const { note } = Astro.props;
 const { Content } = await render(note);
 ---
 
+<!-- <NoteLayout frontmatter={note.data} path=`/notes/js/${note.data.title}`> -->
 <NoteLayout frontmatter={note.data} path=`${Astro.url.pathname}`>
   <Content />
 </NoteLayout>

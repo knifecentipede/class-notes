@@ -5,7 +5,7 @@ import { glob } from 'astro/loaders';
 
 const notesHtml = defineCollection({
     /* Retrieve all Markdown files in your pages directory. */
-    loader: glob({ pattern: "**/*.md", base: "./src/content/html" }),
+    loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/html" }),
     schema: z.object({
         title: z.string(),
     })
@@ -13,7 +13,23 @@ const notesHtml = defineCollection({
 
 const notesCss = defineCollection({
     /* Retrieve all Markdown files in your pages directory. */
-    loader: glob({ pattern: "**/*.md", base: "./src/content/css" }),
+    loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/css" }),
+    schema: z.object({
+        title: z.string(),
+    })
+});
+
+const notesJs = defineCollection({
+    /* Retrieve all Markdown files in your pages directory. */
+    loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/js" }),
+    schema: z.object({
+        title: z.string(),
+    })
+});
+
+const notesUnsorted = defineCollection({
+    /* Retrieve all Markdown files in your pages directory. */
+    loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/unsorted" }),
     schema: z.object({
         title: z.string(),
     })
@@ -21,5 +37,5 @@ const notesCss = defineCollection({
 
 // Export a single `collections` object to register your collection(s)
 export const collections = {
-    notesHtml, notesCss
+    notesHtml, notesCss, notesJs, notesUnsorted
 };

@@ -1,7 +1,8 @@
 ---
+import "../../styles/dir.css";
 import GlobalLayout from "../../layouts/GlobalLayout.astro";
 ---
 
-<GlobalLayout path=`/notes/github`>
+<GlobalLayout path=`${Astro.url.pathname}`>
     <p>Make a content collection and display here</p>
 </GlobalLayout>

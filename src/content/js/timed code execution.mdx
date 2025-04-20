@@ -1,0 +1,16 @@
+---
+title: 'timed code execution'
+---
+
+# setTimeout() will not pause execution of other functions in the functions stack
+Because it's an asyncronous function.
+
+# Why does my setTimeout() call produce different results or inaccurate timing?
+
+The timeout specified is a minimum time that the browser should wait before execution, not a guaranteed time. If the browser is busy doing other things when the timer goes off, the function will be delayed. Depending on precise millisecond timing with setTimeout is not reliable.
+
+**You shouldn't rely on timeouts to guarantee the order of execution.**
+
+<br/>
+
+To create a progression in which one function only fires after the completion of another function, see the documentation on [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise).
