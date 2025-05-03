@@ -1,0 +1,59 @@
+---
+title: 'sizing (ADD MORE)'
+---
+
+*Absolute length units* - (generally considered) always the same size
+
+|     |     |
+| --- | --- |
+| `cm`, `mm`, `in` ... | **CAUTION:** mostly used for print, not screen display |
+| `px` | pixels the GOAT |
+
+*Relative length units* - are based on font, container, or viewport sizes
+
+|     |     |
+| --- | --- | 
+| `em` | its parent's font size (used in `font-size`); otherwise its own font size |
+| `rem` | its root's font size |
+| `vh` | viewport's height. 1vh = 1% of vp height |
+| `vw` | viewport's width. 1vw = 1% of vp width |
+|     | ...and more! |
+
+*Intristic size* - html elements have a natural size set before they're altered by css
+
+*Extrinsic size* - size that's actively added
+
+## em and rem
+
+**Most popular** rel length units that are **super important** to understand!!!!
+
+nested \<li> `1.3em` -> get progressively larger from \<html> to parent to parent
+
+nested \<li> `1.3rem` -> get equally larger once from \<html>
+
+**(TODO: WHICH ONES TO USE WHEN)**
+
+## Percentage
+
+% resolve against containing block's size.
+
+**CAUTION:** When using a percentage you need to be aware what it is a percentage of.
+Furthermore, % margin and padding is calculated from **inline size**, even when applied to height.
+
+## How to avoid container overflow when dealing with variable content?
+
+Try `min-` and `max-` sizes
+
+## How to display responsive and crisp variable images in one container?
+
+`max-width: 100%` images larger than container will be scaled down,
+images smaller than container won't be stretched out
+
+**CAUTION:** Don't use this technique to load huge images by default!
+Always use appropriately sized images!
+
+## Display full-page element with scrollable content below?
+
+Such as an enormous news article header or product site's front page promo image that will amaze and confuse the viewer
+
+Try `100vh`, pushing the rest of the content below viewport

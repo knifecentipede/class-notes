@@ -1,9 +1,53 @@
 ---
-title: 'fonts'
+title: 'fonts (ADD MORE)'
 ---
 
-[Browse Fonts - Google Fonts](https://fonts.google.com/)
+## Properties
 
-[CSS Font Stack: Web Safe and Web Font Family with HTML and CSS code.](https://www.cssfontstack.com/)
+### What is font-family?
 
-[Webfont Generator @font-face kits » Font Squirrel](https://www.fontsquirrel.com/tools/webfont-generator)
+`font-family` -  font/list of fonts aka *font stack* to apply in order
+
+**Recommended:** provide a suitable generic font name at the end of the font stack
+
+### What are serif, sans-serif, monospace etc?
+
+CSS defines five generic names for fonts: serif, sans-serif, monospace, cursive, and fantasy. 
+dispayed differently across browsers/devices. represents a *worst case scenario* where the browser will try its best to provide a font that looks appropriate
+
+### What are font-style and font-weight?
+
+`font-style`  - italic. values are italic, normal, oblique (fake italic that's just slanted normal)
+
+`font-weight` - bold. many values available 
+
+### font-size
+
+|     |     |
+| --- | --- |
+| `px` | pixels |
+| `em` | its parent's font size |
+| `rem` | its root's font size |
+
+Instristic `font-size` of an element is inherited from that element's parent element. 
+`<html>` has instristic `font-size: 16px`.
+
+**CAUTION:** Avoid setting the `font-size` of container elements where possible
+
+**(TODO: WHICH ONES TO USE WHEN)**
+
+## How to space apart lines? Should I?
+
+`line-height` property
+
+Body text generally looks nicer and is easier to read when the lines are spaced apart!
+
+**Recommended:** unitless value acts as a multiplier of `font-size`.
+Usually 1.5 – 2 (double spaced)
+
+---
+
+- [Fonts Knowledge - Google Fonts](https://fonts.google.com/knowledge)
+- [Firefox Font Editor](https://firefox-source-docs.mozilla.org/devtools-user/page_inspector/how_to/edit_fonts/index.html) page inspector guide
+
+---

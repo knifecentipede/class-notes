@@ -1,0 +1,38 @@
+---
+title: 'favicon'
+---
+
+ico can contain multiple bmp or png icons in one file.
+USE ONLY ONE FILE, NAMED FAVICON.ICO.
+
+png can specify different sizes for different devices.
+Use many code lines and files!
+
+Important dimensions: 16, 32, 48 ideally, 180
+
+1. Get an icon png [icons8](https://icons8.com/icons)
+2. Use favicon generator
+[Favic-o-Matic](https://favicomatic.com/)
+[favicon.io](https://favicon.io/)
+to receive ico icon, png icons, and code block.
+THESE IMAGES ARE NOT MUTUALLY EXCLUSIVE
+3. Put icons in root and code in `<head>`
+
+```
+<!-- Basic favicon -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+<link rel="icon" href="/favicon-16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+
+<!-- iOS/Android general use -->
+<link rel="apple touch icon" href="/apple-touch-icon.png" sizes="180x180">
+...
+```
+
+---
+
+- [audreyfeldroy/favicon-cheat-sheet: Obsessive cheat sheet to favicon sizes/types. Please contribute!](https://github.com/audreyfeldroy/favicon-cheat-sheet)
+- [Favicon: Formats, Sizes, Use Cases, and Best Practices - Favicon.im Blog](https://favicon.im/blog/favicon-formats-sizes-best-practices)
+
+---

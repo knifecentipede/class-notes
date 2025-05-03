@@ -1,0 +1,130 @@
+---
+title: 'fonts: variable fonts'
+---
+
+In the past, a *typeface* was produced as multiple individual font files.
+Each representing a width-weight-style combination. over 30 files!!!
+Variable fonts: all those are contained in one file
+
+## How to add a variable font?
+
+The same way as a web font
+
+## Variation axis
+
+*Variation axis* - the allowable range of an aspect of typeface design. Can be range or binary
+
+*Registered:*  weight, width, slant, italic, optical size. : existing css atrributes
+
+*Custom:* infinite. identified by four-letter axes tags (weight = "wght"). stuff like "yeast"
+
+**AXIS NAMES ARE CASE SENSITIVE**. registered - lower case. custom - upper case
+```
+font-variation-settings:
+  "wght" 375,
+  "GRAD" 88;
+```
+
+`font-variation-settings` property uses the tag as part of a key-value pair.
+`font-variation-settings: "wght" 350;`
+
+
+`font-variation-settings` is lower-level syntax and the first mechanism implemented to test the early implementations of variable font support. 
+W3C's intent was for this syntax not to be used when other attributes are available.
+
+**CAUTION:** You should only use `font-variation-settings` as a last resort, 
+if there is no appropriate basic attribute.
+
+Font characteristics set using `font-variation-settings` 
+**will always override** those set using the corresponding basic font properties, 
+e.g. `font-weight`, **no matter where they appear in the cascade**.
+
+### weight
+
+`wght` = `font-weight`. [1; 1000] step 1
+
+in static and variable: [100; 900] step 100; keywords "normal" = 400, "bold" = 700
+
+```
+font-weight: 375;
+font-variation-settings: "wght" 375;
+```
+
+### width
+
+`wdth` = `font-stretch`. [50%; 200%]
+
+```
+font-stretch: 115%;
+font-variation-settings: "wdth" 115;
+```
+
+**CAUTION:** `font-stretch` property is deprecated
+
+### italic
+
+`ital` = `font-style`: italic; 0 not italic, 0.5 half italic, 1 full italic. 
+
+```
+font-style: italic;
+font-variation-settings: "ital" 1;
+font-synthesis: none; // prevent browsers from accidentally applying the variation axis and a synthesized italic
+```
+
+Often has completely different letterforms
+
+### slant
+
+`slnt` = `font-style`: oblique + angle; [-90°; 90°]
+
+```
+font-style: oblique 14deg;
+font-variation-settings: "slnt" -14;
+```
+
+### optical size
+
+`opsz` = `font-optical-sizing`. auto, none, num
+
+```
+font-optical-sizing: auto;
+font-variation-settings: "opsz" 36;
+```
+
+New in css! Optical sizing - 
+thiccness of letters optimized for viewing at different physical sizes.
+
+Automatially applied based on `font-size`. In most cases you want that.
+The option to provide a specific value is provided is when necessary to override the default 
+
+### Custom axis
+
+Can be anything the designer images!
+
+## Compatibility
+
+Variable font support can be checked with CSS Feature Queries (`@supports`)
+
+```
+h1 {
+  font-family: some-non-variable-font-family;
+}
+
+@supports (font-variation-settings: "wdth" 115) {
+  h1 {
+    font-family: some-variable-font-family;
+  }
+}
+```
+
+---
+
+- [Fonts Knowledge - Google Fonts](https://fonts.google.com/knowledge)
+- [Variable fonts guide - CSS: Cascading Style Sheets | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_fonts/Variable_fonts_guide#working_with_older_browsers)
+- [Firefox Font Editor](https://firefox-source-docs.mozilla.org/devtools-user/page_inspector/how_to/edit_fonts/index.html)
+- [259: How To Use Variable Fonts - CSS-Tricks](https://css-tricks.com/newsletter/259-how-to-use-variable-fonts/)
+- [Implementing Variable Fonts](https://variablefonts.io/implementing-variable-fonts)
+- [How to use variable fonts in the real world | Clearleft](https://clearleft.com/thinking/how-to-use-variable-fonts-in-the-real-world)
+- [Creating Custom Font Stacks with Unicode-Range ◆ 24 ways](https://24ways.org/2011/creating-custom-font-stacks-with-unicode-range/)
+
+---

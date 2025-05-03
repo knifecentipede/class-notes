@@ -1,0 +1,41 @@
+---
+title: 'date'
+---
+
+`Date` is a javascript object
+
+[Date - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+
+1. `toString()` = Fri Jul 02 2021 14:03:54 GMT+0100 (British Summer Time)
+2. `toDateString()` = Fri Jul 02 2021
+3. `toLocaleString()` = 7/2/2021, 2:05:07 PM
+4. `toLocaleDateString()` = 7/2/2021
+5. `toGMTString()` = Fri, 02 Jul 2021 13:06:02 GMT
+6. `toUTCString()` = Fri, 02 Jul 2021 13:06:28 GMT
+7. `toISOString()` = 2021-07-02T13:06:53.422Z
+
+you can construct a date obj. 
+you can get or set specific parts of a date obj
+
+**CAUTION:** New `Date()` with two-digit year values (yy00-99) exhibits legacy undesirable, inconsistent behavior. 
+Use `setFullYear()` and `getFullYear()`.
+
+## yyyy-mm-dd HH:mm:ss
+
+`.toISOString().replace("T"," ").substring(0, 19);`
+
+## In database
+
+## Entry added date
+
+(astro db)
+
+in schema: 
+```
+timeAdded: column.date({ default: NOW })
+```
+
+in page html:
+```
+{frontmatter.Book.timeAdded.toISOString().replace("T"," ").substring(0, 19)}
+```

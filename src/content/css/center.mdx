@@ -1,0 +1,31 @@
+---
+title: 'center an element'
+---
+
+Using **flexbox**
+
+```
+containing box {
+    display: flex;
+    align-items: center (vertical centering aka block axis);
+    justify-content: center (horizontal centering aka inline axis)
+```
+
+Alternatively, instead of setting `align-items: center` on the container, you can set `align-self: center` on the inner item itself.
+
+Using **grid**
+
+```
+containing box {
+    display: grid;
+    place-items: center; (on both block and inline axis)
+```
+
+Alternatively, instead of setting `place-items: center` on the container, you can set `place-self: center` or `margin: auto` on the inner item itself.
+
+---
+
+- [Center an element - CSS: Cascading Style Sheets | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_cookbook/Center_an_element)
+- [Centering In CSS Guide | CSS-Tricks](https://css-tricks.com/centering-css-complete-guide/) (more in this guide?)
+
+---

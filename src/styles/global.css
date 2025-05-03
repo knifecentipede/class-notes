@@ -2,3 +2,30 @@
 
 @import "@webtui/css";
 @import "@webtui/theme-gruvbox";
+/* why is broken??? */
+/* @import "@webtui/theme-catpuccin"; */
+@import "@webtui/theme-nord";
+
+/* is this allowed? */
+@layer base {
+    :root {
+        --font-size: 18px;
+        --line-height: 1.4;
+    }
+}
+
+@layer components {
+    [data-webtui-theme|="gruvbox"] p code,
+    [data-webtui-theme|="gruvbox"] ol code,
+    [data-webtui-theme|="gruvbox"] ul code {
+        color: var(--gb-yellow);
+    }
+}
+
+@layer components {
+    pre.astro-code {
+        padding: 1lh 1ch;
+        word-wrap: break-word;
+        white-space: pre-wrap;
+    }
+}

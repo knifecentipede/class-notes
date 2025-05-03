@@ -1,0 +1,52 @@
+---
+title: 'fonts: web fonts'
+---
+
+Web fonts are downloaded along with your site when it's accessed. Letting you display any font!
+
+## How to add a web font?
+
+1. Find web fonts
+2. Generate the code using Webfont Generator or fontsqirrel.
+You receive: woff and woff2, demo html, stylesheet.css with generated `@font-face` code
+3. Put `@font-face` at the top of your css
+4. Make sure in `@font-face` url() paths to font files are correct
+5. Now you can use these fonts in font stacks!
+
+## Using an online font service
+
+Online font services store and serve fonts for you 
+so you don't have to worry about writing the `@font-face` code
+
+[Browse Fonts - Google Fonts](https://fonts.google.com/) free stuff!!!
+
+1. Get font
+2. Get embed coode
+3. Paste it into html in head above the css link element
+
+## @font-face
+
+font-family specifies the name YOU WANT TO REFER TO THE FONT AS
+
+All\* browsers support WOFF/WOFF2
+
+> The order in which you list font files is important.
+> the browser will choose the first font file it's able to use. 
+> That's why the format you list first should be the preferred format —
+> that is, WOFF2 — with the older formats listed after that. 
+
+## Best practices
+
+Instead of declaring separate font family entries per italic/bold variation file,
+declare them as one font with family with respective style/weight values
+(see guide if confused)
+
+[@font-face tip: define font-weight and font-style to keep your CSS simple | 456 Berea Street](https://www.456bereastreet.com/archive/201012/font-face_tip_define_font-weight_and_font-style_to_keep_your_css_simple/)
+
+
+---
+
+- [Fonts Knowledge - Google Fonts](https://fonts.google.com/knowledge)
+- [Choosing web fonts: A beginner's all-in-one guide – Fonts Knowledge - Google Fonts](Chttps://fonts.google.com/knowledge/choosing_type/choosing_web_fonts_beginners_guide) (haven't read)
+
+---

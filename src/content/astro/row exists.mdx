@@ -1,0 +1,26 @@
+---
+title: 'astro db: if row exists'
+---
+
+(I think there are less dumb ways to do it)
+
+## Check if row exists
+
+[How to check if a row exists in Drizzle? - Drizzle Team](https://www.answeroverflow.com/m/1178729503619567628)
+```
+let exists = [];
+    // find author by name
+    exists = await db
+    .select()
+    .from(Author)
+    .where(eq(Author.name, `${name}`));
+```
+-> `(exists.length !== 0)`
+
+## If row exists get its column
+```
+let authorId;
+if (exists.length !== 0) {
+    authorId = exists.map((a) => a.id)[0];
+}
+```

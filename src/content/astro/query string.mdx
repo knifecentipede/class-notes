@@ -1,0 +1,68 @@
+---
+title: 'astro db: query string'
+---
+
+"localhost:4321/books?q=words&column=title"
+
+## Search bar that redirects to results page
+
+In search bar component:
+```
+<form action="/books" method="GET" autocomplete="off">
+    <label>
+        <input type="search" name="q" id="searchfield" />
+        <button>Search</button>
+    </label>
+    <fieldset>
+        <legend>Search books in:</legend>
+        <div>
+            <input
+                type="radio"
+                id="column-title"
+                name="column"
+                value="title"
+                checked
+            />
+            <label for="column-title">Title</label>
+    (...)
+```
+
+In /books page:
+```
+---
+const search = Astro.url.searchParams.get("q");
+const column = Astro.url.searchParams.get("column");
+
+switch (column) {
+        case "title":
+            rows = await db
+                .select()
+                .from(Book)
+                .where(like(Book.title, `%${search}%`))
+            break;
+        (...)
+---
+```
+
+## Search/filter link text
+
+Click author's name which is a link -> "localhost:4321/books?q=person&column=(link text)"
+
+In /books page:
+```
+<a
+    href={
+        `/books?` +
+        `${new URLSearchParams({
+            q: Author.name.toLowerCase(),
+            column: "author",
+        })}`
+    }
+>
+    {Author.name}
+</a>
+```
+
+---
+
+[Remove empty query parameters from URLs](https://www.jacobparis.com/content/clear-empty-params)

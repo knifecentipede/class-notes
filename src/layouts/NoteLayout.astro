@@ -1,8 +1,27 @@
 ---
 import GlobalLayout from "./GlobalLayout.astro";
+import "../styles/note.css";
 const { path } = Astro.props;
 ---
 
 <GlobalLayout path={path}>
+    <a href="./">/..</a>
     <slot />
 </GlobalLayout>
+
+<style>
+    /* for the return button */
+    a:hover,
+    a:focus {
+        background-color: var(--background1);
+        color: var(--gb-purple);
+    }
+
+    /* please do not break my stuff */
+    a {
+        display: block;
+        width: 100%;
+        color: var(--gb-blue);
+    }
+
+</style>

@@ -27,9 +27,25 @@ const notesJs = defineCollection({
     })
 });
 
-const notesUnsorted = defineCollection({
+const notesAstro = defineCollection({
     /* Retrieve all Markdown files in your pages directory. */
-    loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/unsorted" }),
+    loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/astro" }),
+    schema: z.object({
+        title: z.string(),
+    })
+});
+
+const notesGithub = defineCollection({
+    /* Retrieve all Markdown files in your pages directory. */
+    loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/github" }),
+    schema: z.object({
+        title: z.string(),
+    })
+});
+
+const notesUnspecified = defineCollection({
+    /* Retrieve all Markdown files in your pages directory. */
+    loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/unspecified" }),
     schema: z.object({
         title: z.string(),
     })
@@ -37,5 +53,5 @@ const notesUnsorted = defineCollection({
 
 // Export a single `collections` object to register your collection(s)
 export const collections = {
-    notesHtml, notesCss, notesJs, notesUnsorted
+    notesHtml, notesCss, notesJs, notesAstro, notesGithub, notesUnspecified
 };

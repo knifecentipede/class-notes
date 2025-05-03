@@ -3,7 +3,7 @@
 ---
 
 <aside box-="square contain:!top" class="box">
-    <span is-="badge" variant-="background0">Contents</span>
+    <span is-="badge" variant-="background0">Records</span>
 
     <div id="inside">
         <summary>notes</summary>
@@ -13,23 +13,24 @@
             <li><a href="/notes/js/">JS</a></li>
             <li><a href="/notes/astro/">Astro</a></li>
             <li><a href="/notes/github/">Github</a></li>
-            <li><a href="/notes/unsorted/">Unsorted</a></li>
+            <li><a href="/notes/unspecified/">Unspecified</a></li>
         </ul>
 
         <br />
-        <summary>stack</summary>
+        <summary>support</summary>
         <ul marker-="open tree">
-            <li><a href="/stack/books/">Books</a></li>
-            <li><a href="/stack/sites/">Sites</a></li>
-            <li><a href="/stack/articles/">Articles</a></li>
-            <li><a href="/stack/resources/">Resources</a></li>
-            <li><a href="/stack/curios/">Curios</a></li>
+            <li><a href="/support/tools/">Tools</a></li>
+            <li><a href="/support/guides">Guides</a></li>
+            <li><a href="/support/curios/">Curios</a></li>
+            <!-- that page confuses me/.... -->
+            <!-- <li><a href="/support/links/">Links</a></li> -->
         </ul>
 
         <br />
-        <summary>test area</summary>
+        <summary>study</summary>
         <ul marker-="open tree">
-            <li><a href="/test/">test</a></li>
+            <li><a href="/study/classes/">Classes</a></li>
+            <li><a href="/study/lessons/">Lessons</a></li>
         </ul>
     </div>
 </aside>
@@ -37,13 +38,14 @@
 <style>
     span {
         /* limit too long sidebar badge */
+        /* badge 3ch narrower than aside container */
         overflow-x: hidden;
-        max-width: 27ch;
+        max-width: 22ch;
     }
 
     aside {
         /* fixed sidebar container width because I like it */
-        width: 30ch;
+        width: 25ch;
         /* keep red content inside box */
         /* aligned with article */
         padding-bottom: 3lh;
@@ -52,6 +54,16 @@
 
         /* dev dimensions scaffolding */
         /* border: 2px solid green; */
+    }
+
+    /* hide sidebar when the window is narrow */
+    /* IMPORTANT! site is usually open next to code editor */
+    /* one tiny monitor dev moment kekw */
+    /* (max width was chosen based entirely on my convenience) */
+    @media screen and (max-width: 90ch) {
+        aside {
+            display: none;
+        }
     }
 
     #inside {
@@ -63,8 +75,8 @@
         padding-right: 2ch;
 
         margin-top: 1lh;
-        /* content slightly narrower than container */
-        width: 27ch;
+        /* content 2ch narrower than aside container */
+        width: 23ch;
 
         /* red's height matches green parent */
         /* rather than its own content */
@@ -75,7 +87,7 @@
     }
 
     .box {
-        --box-border-color: var(--background1);
+        /* --box-border-color: var(--background1); */
     }
 
     /* shiny navigation highlight */

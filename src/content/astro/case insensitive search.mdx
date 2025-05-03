@@ -1,0 +1,15 @@
+---
+title: 'astro db: case insensitive search'
+---
+
+(01/05/25) Drizzle ORM does not support ilike (value is like some other value, case insensitive)
+for SQlite.
+
+> Turso is the company behind libSQL, the open-source fork of SQLite that powers Astro DB.
+
+```
+let nocase = await db
+    .select()
+    .from(Author)
+    .where(eq(Author.name, `${name}`).append(sql` COLLATE NOCASE`));
+```
