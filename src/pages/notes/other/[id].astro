@@ -5,8 +5,8 @@ import NoteLayout from "../../../layouts/NoteLayout.astro";
 import { getCollection, render } from "astro:content";
 // 1. Generate a new path for every collection entsry
 export async function getStaticPaths() {
-  const notesUnspecified = await getCollection("notesUnspecified");
-  return notesUnspecified.map((note) => ({
+  const notesOther = await getCollection("notesOther");
+  return notesOther.map((note) => ({
     params: { id: note.id },
     props: { note },
   }));

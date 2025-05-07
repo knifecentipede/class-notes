@@ -43,9 +43,9 @@ const notesGithub = defineCollection({
     })
 });
 
-const notesUnspecified = defineCollection({
+const notesOther = defineCollection({
     /* Retrieve all Markdown files in your pages directory. */
-    loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/unspecified" }),
+    loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/other" }),
     schema: z.object({
         title: z.string(),
     })
@@ -53,5 +53,5 @@ const notesUnspecified = defineCollection({
 
 // Export a single `collections` object to register your collection(s)
 export const collections = {
-    notesHtml, notesCss, notesJs, notesAstro, notesGithub, notesUnspecified
+    notesHtml, notesCss, notesJs, notesAstro, notesGithub, notesOther
 };

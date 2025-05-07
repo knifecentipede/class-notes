@@ -1,7 +1,11 @@
 ---
 import Header from "../components/Header.astro";
-import Sidebar from "../components/Sidebar.astro";
+import Catalogue from "../components/Catalogue.astro";
 import Article from "../components/Article.astro";
+
+// TABLE OF CONTENTS WIP
+import Contents from "../components/Contents.astro";
+
 import "../styles/global.css";
 const { path } = Astro.props;
 ---
@@ -21,7 +25,7 @@ const { path } = Astro.props;
         <div id="outer">
             <Header />
             <div id="inner">
-                <Sidebar />
+                <Catalogue />
                 <Article path={path}>
                     <slot />
                 </Article>

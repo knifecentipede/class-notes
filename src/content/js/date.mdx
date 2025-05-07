@@ -2,9 +2,7 @@
 title: 'date'
 ---
 
-`Date` is a javascript object
-
-[Date - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+`Date` is a javascript object [Date - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 
 1. `toString()` = Fri Jul 02 2021 14:03:54 GMT+0100 (British Summer Time)
 2. `toDateString()` = Fri Jul 02 2021
@@ -23,19 +21,3 @@ Use `setFullYear()` and `getFullYear()`.
 ## yyyy-mm-dd HH:mm:ss
 
 `.toISOString().replace("T"," ").substring(0, 19);`
-
-## In database
-
-## Entry added date
-
-(astro db)
-
-in schema: 
-```
-timeAdded: column.date({ default: NOW })
-```
-
-in page html:
-```
-{frontmatter.Book.timeAdded.toISOString().replace("T"," ").substring(0, 19)}
-```

@@ -1,5 +1,9 @@
 ---
 import GlobalLayout from "./GlobalLayout.astro";
+
+// TABLE OF CONTENTS WIP
+import Contents from "../components/Contents.astro";
+
 import "../styles/note.css";
 const { path } = Astro.props;
 ---
@@ -7,6 +11,8 @@ const { path } = Astro.props;
 <GlobalLayout path={path}>
     <a href="./">/..</a>
     <slot />
+    <!-- contents is TABLE OF CONTENTS WIP -->
+    <!-- <Contents /> -->
 </GlobalLayout>
 
 <style>
