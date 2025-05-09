@@ -27,7 +27,7 @@ In search bar component:
     (...)
 ```
 
-In /books page:
+In /books:
 ```
 ---
 const search = Astro.url.searchParams.get("q");
@@ -44,11 +44,11 @@ switch (column) {
 ---
 ```
 
-## Search that's link text
+## Search by link text
 
-Click author's name that's a link -> "localhost:4321/books?q=person&column=(link text)"
+ -> "localhost:4321/books?q=person&column=(link text)"
 
-In /books page:
+In /books:
 ```
 <a
     href={
