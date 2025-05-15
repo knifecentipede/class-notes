@@ -1,14 +1,14 @@
-.dir {
+.browse-collection {
     list-style-type: none;
 }
 
-.dir li::before {
+.browse-collection li::before {
     content: "";
 }
 
 /* shiny navigation highlight */
-.dir li:hover,
-.dir li:focus {
+.browse-collection li:hover,
+.browse-collection li:focus {
     background-color: var(--background1);
 
     a {
@@ -17,7 +17,7 @@
 }
 
 /* please do not break my stuff */
-.dir li a {
+.browse-collection li a {
     display: block;
     width: 100%;
 }

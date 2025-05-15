@@ -1,51 +1,57 @@
-// 1. Import utilities from `astro:content`
 import { defineCollection, z } from 'astro:content';
-// 2. Import loader(s)
 import { glob } from 'astro/loaders';
 
-const notesHtml = defineCollection({
-    /* Retrieve all Markdown files in your pages directory. */
+const html = defineCollection({
     loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/html" }),
     schema: z.object({
         title: z.string(),
     })
 });
 
-const notesCss = defineCollection({
-    /* Retrieve all Markdown files in your pages directory. */
+const css = defineCollection({
     loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/css" }),
     schema: z.object({
         title: z.string(),
     })
 });
 
-const notesJs = defineCollection({
-    /* Retrieve all Markdown files in your pages directory. */
+const js = defineCollection({
     loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/js" }),
     schema: z.object({
         title: z.string(),
     })
 });
 
-const notesAstro = defineCollection({
-    /* Retrieve all Markdown files in your pages directory. */
+const astro = defineCollection({
     loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/astro" }),
     schema: z.object({
         title: z.string(),
     })
 });
 
-const notesGithub = defineCollection({
-    /* Retrieve all Markdown files in your pages directory. */
+const github = defineCollection({
     loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/github" }),
     schema: z.object({
         title: z.string(),
     })
 });
 
-const notesOther = defineCollection({
-    /* Retrieve all Markdown files in your pages directory. */
+const other = defineCollection({
     loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/other" }),
+    schema: z.object({
+        title: z.string(),
+    })
+});
+
+const test1 = defineCollection({
+    loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/test1" }),
+    schema: z.object({
+        title: z.string(),
+    })
+});
+
+const test2 = defineCollection({
+    loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/test1" }),
     schema: z.object({
         title: z.string(),
     })
@@ -53,5 +59,5 @@ const notesOther = defineCollection({
 
 // Export a single `collections` object to register your collection(s)
 export const collections = {
-    notesHtml, notesCss, notesJs, notesAstro, notesGithub, notesOther
+    html, css, js, astro, github, other, test1, test2
 };

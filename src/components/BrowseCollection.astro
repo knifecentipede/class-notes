@@ -1,0 +1,20 @@
+---
+// receive directories from browse collection page N.astro
+const { directories } = Astro.props;
+
+import { getCollection } from "astro:content";
+const collection = await getCollection(directories[1]);
+---
+
+<!-- return browse collection element of N -->
+<ul class="browse-collection">
+    {
+        collection.map((file) => (
+            <li>
+                <a href={`/${directories[0]}/${directories[1]}/${file.id}`}>
+                    /{file.data.title}
+                </a>
+            </li>
+        ))
+    }
+</ul>

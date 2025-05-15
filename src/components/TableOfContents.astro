@@ -1,0 +1,23 @@
+---
+// headings destination from browse mdx page: [id].astro
+const { headings } = Astro.props;
+---
+
+<aside box-="square contain:!top" class="box" id="right">
+    <span is-="badge" variant-="background0">Table of Contents</span>
+
+    <div id="rsb-inner">
+        <ul>
+            {
+                headings.map((heading) => (
+                    <li>
+                        <a href={`#${heading.slug}`}>{heading.text}</a> (Level:{" "}
+                        {heading.depth})
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+</aside>
+
+<style></style>

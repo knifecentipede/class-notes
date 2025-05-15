@@ -1,18 +1,16 @@
 ---
-import "../../styles/dir.css";
+import "../../styles/browse-collection.css";
 import GlobalLayout from "../../layouts/GlobalLayout.astro";
-import { getCollection } from "astro:content";
-const notes = await getCollection(`notesHtml`);
+import BrowseCollection from "../../components/BrowseCollection.astro";
+
+// getCollection requires knowing N: N.astro
+
+// assuming depth is /group/N/[id].astro
+const myurl = Astro.url.pathname;
+const directories = myurl.split("/").splice(1, 2);
 ---
 
 <GlobalLayout path=`${Astro.url.pathname}`>
-    <ul class="dir">
-        {
-            notes.map((note) => (
-                <li>
-                    <a href={`/notes/html/${note.id}`}>/{note.data.title}</a>
-                </li>
-            ))
-        }
-    </ul>
+    <!-- pass this unique url containing N to browse collection constructor -->
+    <BrowseCollection directories={directories} />
 </GlobalLayout>

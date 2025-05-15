@@ -1,13 +1,13 @@
 ---
 import Header from "../components/Header.astro";
-import Catalogue from "../components/Catalogue.astro";
+import Files from "../components/Files.astro";
 import Article from "../components/Article.astro";
-
-// TABLE OF CONTENTS WIP
-import Contents from "../components/Contents.astro";
+import TableOfContents from "../components/TableOfContents.astro";
 
 import "../styles/global.css";
 const { path } = Astro.props;
+// markdown file headings float up
+const { headings } = Astro.props;
 ---
 
 <!-- <html lang="en" data-webtui-theme="gruvbox-light-soft"> -->
@@ -22,13 +22,25 @@ const { path } = Astro.props;
     </head>
 
     <body>
-        <div id="outer">
+        <div class="global-outer">
             <Header />
-            <div id="inner">
-                <Catalogue />
+            <div class="global-columns">
+                <Files />
+
+                <!-- 5. render the completed Article component-->
                 <Article path={path}>
+                    <!-- 2. index.astro arrives here -->
+                    <!-- make sure only what's intended can be here! -->
+                    <!-- <slot name="words" /> -->
                     <slot />
+                    <!-- 3. call Article on <Article>'s contents -->
+                    <!-- i.e index.astro -->
                 </Article>
+
+                <!-- if headings were received by global layout -->
+                <!-- i.e page contents were a markdown file -->
+                <!-- display toc sidebar and pass headings -->
+                {headings && <TableOfContents headings={headings} />}
             </div>
         </div>
     </body>
@@ -43,6 +55,9 @@ const { path } = Astro.props;
         /* padding-bottom: 1lh; */
         /* padding-left: 2ch; */
         /* padding-right: 2ch; */
+
+        /* copied from sandbox */
+        display: block;
     }
 
     /* FLOW HELL */
@@ -55,7 +70,7 @@ const { path } = Astro.props;
         overflow-y: hidden;
     }
 
-    #outer {
+    .global-outer {
         /* nav and content are vertical */
         display: block;
 
@@ -63,7 +78,7 @@ const { path } = Astro.props;
         /* border: 3px solid purple; */
     }
 
-    #inner {
+    .global-columns {
         /* but boxes are horizonal */
         display: flex;
 

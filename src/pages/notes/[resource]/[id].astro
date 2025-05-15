@@ -1,0 +1,25 @@
+---
+import GlobalLayout from "../../../layouts/GlobalLayout.astro";
+
+export const prerender = false; // Not needed in 'server' mode
+
+const { resource, id } = Astro.params;
+
+import { getCollection, getEntry, render } from "astro:content";
+const collection = await getCollection(resource);
+const entry = await getEntry(resource, id);
+
+const { Content, headings } = await render(entry);
+---
+
+<GlobalLayout>
+    <h1>{resource}: {id}</h1>
+
+    <ul>
+        {collection.map((file) => <li>{file.data.title}</li>)}
+    </ul>
+
+    <Content />
+</GlobalLayout>
+
+<!-- src/notes/[resource]/[id].astro -->

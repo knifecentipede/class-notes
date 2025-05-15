@@ -4,13 +4,18 @@ const { path } = Astro.props;
 ---
 
 <article box-="square contain:!top" class="box">
+    <!-- badge -->
     <span is-="badge" variant-="background0">
         <h1>{path}</h1>
     </span>
 
+    <!-- below badge -->
     <div id="page-content">
+        <!-- 4. index.astro arrives here -->
         <slot />
     </div>
+
+    <!-- there's no reason for anything to be here -->
 </article>
 
 <style>
@@ -49,6 +54,7 @@ const { path } = Astro.props;
 
         /* dev dimensions scaffolding */
         /* border: 2px dotted red; */
+
     }
 
     .box {
