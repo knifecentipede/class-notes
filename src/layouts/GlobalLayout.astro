@@ -5,6 +5,7 @@ import Article from "../components/Article.astro";
 import TableOfContents from "../components/TableOfContents.astro";
 
 import "../styles/global.css";
+
 const { path } = Astro.props;
 // markdown file headings float up
 const { headings } = Astro.props;
@@ -46,19 +47,9 @@ const { headings } = Astro.props;
 
 <style>
     body {
-        /* FLOW HELL */
-        /* column-gap: 1ch; */
-        /* row-gap: 1lh; */
-        /* padding-top: 1lh; */
-        /* padding-bottom: 1lh; */
-        /* padding-left: 2ch; */
-        /* padding-right: 2ch; */
-
-        /* copied from sandbox */
         display: block;
     }
 
-    /* FLOW HELL */
     html,
     body {
         display: block;

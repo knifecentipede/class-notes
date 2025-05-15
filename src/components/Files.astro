@@ -20,9 +20,7 @@
         <summary>support</summary>
         <ul marker-="open tree">
             <li><a href="/support/tools/">Tools</a></li>
-            <li><a href="/support/guides/">Guides</a></li>
             <li><a href="/support/curios/">Curios</a></li>
-            <!-- that page confuses me/.... -->
             <li><a href="/support/other/">Other</a></li>
         </ul>
 
@@ -91,8 +89,8 @@
     }
 
     /* shiny navigation highlight */
-    ul li:hover,
-    ul li:focus {
+    #files-inside ul li:hover,
+    #files-inside ul li:focus {
         background-color: var(--background1);
         a {
             color: var(--gb-purple);
@@ -100,7 +98,7 @@
     }
 
     /* please do not break my stuff */
-    li a {
+    #files-inside li a {
         display: inline-block;
         width: calc(100% - 2ch);
     }

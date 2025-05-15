@@ -1,6 +1,7 @@
 /* #file-content>* */
-#file-content>p, 
+#file-content>p,
 #file-content>ul,
+#file-content>ol,
 #file-content>hr {
     margin-bottom: 1lh;
 }
@@ -16,4 +17,23 @@
         padding-right: 1ch;
 
     }
+}
+
+#file-content {
+    list-style-type: none;
+}
+
+#file-content ul>li::before {
+    content: "";
+}
+
+/* shiny navigation highlight */
+#file-content li a:hover,
+#file-content li a:focus {
+    background-color: var(--background1);
+}
+
+#file-content li a {
+    display: block;
+    width: 100%;
 }
