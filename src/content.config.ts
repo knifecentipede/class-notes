@@ -51,7 +51,7 @@ const test1 = defineCollection({
 });
 
 const test2 = defineCollection({
-    loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/test1" }),
+    loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/test2" }),
     schema: z.object({
         title: z.string(),
     })

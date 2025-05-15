@@ -1,0 +1,20 @@
+---
+import GlobalLayout from "../../../layouts/GlobalLayout.astro";
+
+export const prerender = false; // Not needed in 'server' mode
+
+const { category, id } = Astro.params;
+
+import { getCollection, getEntry, render } from "astro:content";
+const collection = await getCollection(category);
+const entry = await getEntry(category, id);
+
+const { Content, headings } = await render(entry);
+---
+
+<GlobalLayout path=`${Astro.url.pathname}`>
+    <!-- <h1>{category}: {id}</h1> -->
+    <Content />
+</GlobalLayout>
+
+<!-- src/notes/[category]/[id].astro -->

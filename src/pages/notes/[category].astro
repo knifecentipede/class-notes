@@ -1,0 +1,25 @@
+---
+import "../../styles/browse-collection.css";
+import GlobalLayout from "../../layouts/GlobalLayout.astro";
+
+export const prerender = false; // Not needed in 'server' mode
+
+const { category } = Astro.params;
+
+import { getCollection, render } from "astro:content";
+const collection = await getCollection(category);
+---
+
+<GlobalLayout path=`${Astro.url.pathname}`>
+    <ul class="browse-collection">
+        {
+            collection.map((file) => (
+                <li>
+                    <a href={`/notes/${category}/${file.id}`}>/{file.data.title}</a>
+                </li>
+            ))
+        }
+    </ul>
+</GlobalLayout>
+
+<!-- src/notes/[category]/.astro -->
