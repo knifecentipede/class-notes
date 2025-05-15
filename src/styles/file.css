@@ -1,11 +1,11 @@
-/* TABLE OF CONTENTS WIP */
-/* this is the working og code */
-#page-content>* {
+/* #file-content>* */
+#file-content>p, 
+#file-content>ul,
+#file-content>hr {
     margin-bottom: 1lh;
 }
 
-
-#page-content table {
+#file-content table {
     border-spacing: 2ch 0lh;
 
     code {

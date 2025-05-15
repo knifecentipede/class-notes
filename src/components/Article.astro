@@ -1,6 +1,7 @@
 ---
 // Usage: <Article title="# /dir/title" />
 const { path } = Astro.props;
+import "../styles/file.css";
 ---
 
 <article box-="square contain:!top" class="box">
@@ -10,7 +11,7 @@ const { path } = Astro.props;
     </span>
 
     <!-- below badge -->
-    <div id="page-content">
+    <div id="file-content">
         <!-- 4. index.astro arrives here -->
         <slot />
     </div>
@@ -39,7 +40,7 @@ const { path } = Astro.props;
         /* border: 2px solid green; */
     }
 
-    #page-content {
+    #file-content {
         /* overflow-y gives red bar scroll */
         /* and keeps bottom text inside red box */
         overflow-y: auto;
@@ -54,7 +55,6 @@ const { path } = Astro.props;
 
         /* dev dimensions scaffolding */
         /* border: 2px dotted red; */
-
     }
 
     .box {

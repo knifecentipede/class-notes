@@ -12,9 +12,25 @@ const entry = await getEntry(category, id);
 const { Content, headings } = await render(entry);
 ---
 
-<GlobalLayout path=`${Astro.url.pathname}`>
+<GlobalLayout path=`${Astro.url.pathname}` headings={headings}>
     <!-- <h1>{category}: {id}</h1> -->
+    <a href="./" class="retvrn">/..</a>
     <Content />
 </GlobalLayout>
 
 <!-- src/notes/[category]/[id].astro -->
+<style>
+    /* for the return link */
+    .retvrn:hover,
+    .retvrn:focus {
+        background-color: var(--background1);
+        color: var(--gb-purple);
+    }
+
+    /* please do not break my stuff */
+    .retvrn {
+        display: block;
+        width: 100%;
+        color: var(--gb-blue);
+    }
+</style>

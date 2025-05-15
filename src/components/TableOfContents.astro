@@ -10,7 +10,7 @@ const { headings } = Astro.props;
         <ul>
             {
                 headings.map((heading) => (
-                    <li>
+                    <li class="toc-link">
                         <a href={`#${heading.slug}`}>{heading.text}</a> (Level:{" "}
                         {heading.depth})
                     </li>
