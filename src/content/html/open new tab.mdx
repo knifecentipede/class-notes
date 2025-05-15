@@ -1,0 +1,45 @@
+---
+title: 'open external link in a new tab'
+---
+
+using `target="_blank"`
+
+**<span style="color:var(--gb-red)">ALERT:</span>** this makes the website vulnerable to phishing attacks.
+
+Opening an external link in a new tab makes your website vulnerable.
+The site you link can gain access to the window containing your website 
+and can change it to display different webpage. This is called phishing. 
+In order to make your website secure **always add** `rel="noopener noreferrer"`
+
+```<a href="https://www.google.com/" target="_blank" rel="noopener noreferrer">Google</a>```
+
+## Open external links in a new tab by default
+
+in /src/scripts/open-tab.js
+
+```
+function setTargetBlankOnExternalLinks() {
+  const links = document.getElementsByTagName('a')
+
+  for (var i = 0; i < links.length; i++) {
+    if (/^http/.test(links[i].getAttribute('href'))) {
+      const link = links[i]
+      link.setAttribute('target', '_blank')
+      link.setAttribute('rel', 'noopener noreferrer')
+    }
+  }
+}
+
+setTargetBlankOnExternalLinks() // call this after the DOM is ready
+```
+
+in global layout
+```
+<script>
+    import "../scripts/open-tab.js";
+</script>
+```
+
+**<span style="color:var(--gb-orange)">CAUTION:</span>** everyone warns against doing it
+because it stresses out the seo and users.
+(citation needed)

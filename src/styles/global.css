@@ -9,7 +9,7 @@
 /* is this allowed? */
 @layer base {
     :root {
-        --font-size: 18px;
+        --font-size: 17px;
         --line-height: 1.2;
     }
 }
@@ -27,5 +27,6 @@
         padding: 1lh 1ch;
         word-wrap: break-word;
         white-space: pre-wrap;
+        /* margin-bottom: 1lh; */
     }
 }

@@ -2,7 +2,10 @@
 #file-content>p,
 #file-content>ul,
 #file-content>ol,
-#file-content>hr {
+#file-content>hr,
+#file-content>pre.astro-code,
+#file-content>h2,
+#file-content>h3 {
     margin-bottom: 1lh;
 }
 
