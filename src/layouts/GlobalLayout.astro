@@ -1,7 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import Files from "../components/Files.astro";
-import Article from "../components/Article.astro";
+import Item from "../components/Item.astro";
 import TableOfContents from "../components/TableOfContents.astro";
 
 import "../styles/global.css";
@@ -26,15 +26,15 @@ const { headings } = Astro.props;
             <div class="global-columns">
                 <Files />
 
-                <!-- 5. render the completed Article component-->
-                <Article path={path}>
+                <!-- 5. render the completed Item component-->
+                <Item path={path}>
                     <!-- 2. index.astro arrives here -->
                     <!-- make sure only what's intended can be here! -->
                     <!-- <slot name="words" /> -->
                     <slot />
-                    <!-- 3. call Article on <Article>'s contents -->
+                    <!-- 3. call Item on <Item>'s contents -->
                     <!-- i.e index.astro -->
-                </Article>
+                </Item>
 
                 <!-- if headings were received by global layout -->
                 <!-- i.e page contents were a markdown file -->

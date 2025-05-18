@@ -1,8 +1,8 @@
 ---
-// Usage: <Article title="# /dir/title" />
+// Usage: <Item title="# /dir/title" />
 const { path } = Astro.props;
 // WHY NOT ARTICLE CSS? CONSIDER LATER
-import "../styles/file.css";
+import "../styles/item.css";
 ---
 
 <article box-="square contain:!top" class="box">
@@ -12,7 +12,7 @@ import "../styles/file.css";
     </span>
 
     <!-- below badge -->
-    <div id="file-content">
+    <div id="item-content">
         <!-- 4. index.astro arrives here -->
         <slot />
     </div>
@@ -44,7 +44,7 @@ import "../styles/file.css";
         /* border: 2px solid green; */
     }
 
-    #file-content {
+    #item-content {
         /* THIS IS WHAT RESOLVES CONFLICT BETWEEN TOC AND */
         /* ARTICLE'S COMMENTED OUT OVERFLOW PROPERTIES */
         /* in the long word error scenario */

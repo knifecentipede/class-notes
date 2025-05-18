@@ -43,21 +43,7 @@ const other = defineCollection({
     })
 });
 
-const test1 = defineCollection({
-    loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/test1" }),
-    schema: z.object({
-        title: z.string(),
-    })
-});
-
-const test2 = defineCollection({
-    loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/test2" }),
-    schema: z.object({
-        title: z.string(),
-    })
-});
-
 // Export a single `collections` object to register your collection(s)
 export const collections = {
-    html, css, js, astro, github, other, test1, test2
+    html, css, js, astro, github, other
 };

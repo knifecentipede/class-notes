@@ -1,21 +1,20 @@
 /* CSS of article component contents */
-/* WHY FILE? WHY NOT IN ARTICLE? CONSIDER LATER */
 
 /* all text blocks are flex items with a gap */
 /* very simple and controllable! */
-#file-content {
+#item-content {
     display: flex;
     flex-direction: column;
     gap: 1lh;
 }
 
 /* FOR TESTING (highlight all text blocks) */
-/* #file-content>* {
+/* #item-content>* {
     background-color: var(--background2);
 } */
 
 /* legible table */
-#file-content table {
+#item-content table {
     border-spacing: 2ch 0lh;
 
     /* styling code in tables not natively possible */
@@ -28,24 +27,24 @@
     }
 }
 
-#file-content {
+#item-content {
     list-style-type: none;
 }
 
 /* remove ul list markers */
-#file-content ul>li::before {
+#item-content ul>li::before {
     content: "";
 }
 
 /* link navigation highlight thing */
 /* standard styling unlike dir navigation!!! */
-#file-content li a:hover,
-#file-content li a:focus {
+#item-content li a:hover,
+#item-content li a:focus {
     background-color: var(--background1);
 }
 
 /* allows you to annotate list links below */
-#file-content li a {
+#item-content li a {
     display: block;
     width: 100%;
 }
