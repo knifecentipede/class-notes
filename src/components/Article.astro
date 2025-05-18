@@ -22,6 +22,10 @@ import "../styles/file.css";
 
 <style>
     article {
+        /* HEADER SLUG STRUGGLE ZONE */
+        
+        /* HEADER SLUG STRUGGLE ZONE */
+
         /* article resizes to take up all remaining space */
         /* while sidebar doesn't */
         width: 100%;
@@ -31,20 +35,35 @@ import "../styles/file.css";
 
         /* when there's a very long word */
         /* overflow-x makes red and green border not extend */
-        overflow-x: hidden;
+        /* overflow-x: hidden; */
+        /* UPDATE: caused red box problems with toc */
+
         /* overflow-y removes body scroll bar */
-        overflow-y: hidden;
+        /* overflow-y: hidden; */
+        /* UPDATE: caused red box problems with toc */
+        /* UPDATE: commented out and scroll bar is still here? */
+
         /* pulls up the box border? */
         height: 94vh;
 
-        /* dev dimensions scaffolding */
-        /* border: 2px solid green; */
+        /* FOR TESTING */
+        border: 2px solid green;
     }
 
     #file-content {
+        /* HEADER SLUG STRUGGLE ZONE */
+        /* min-height: 100%; */
+        /*position: absolute; */
+        /* margin-top: 2lh;  */
+        /* height: 90%; */
+        max-width: 100%;
+        /* HEADER SLUG STRUGGLE ZONE */
+
         /* overflow-y gives red bar scroll */
         /* and keeps bottom text inside red box */
+        /* DO NOT REMOVE!!!!!! */
         overflow-y: auto;
+        
         /* visual */
         padding: 2ch;
         /* not sure what it does */
@@ -54,13 +73,11 @@ import "../styles/file.css";
         /* rather than its own content */
         height: 100%;
 
-        /* dev dimensions scaffolding */
-        /* border: 2px dotted red; */
+        /* FOR TESTING */
+        border: 2px dotted red;
     }
 
     .box {
         /* --box-border-color: var(--background1); */
     }
-
-    
 </style>

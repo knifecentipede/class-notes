@@ -3,10 +3,10 @@
 const { headings } = Astro.props;
 ---
 
-<aside box-="square contain:!top" class="box" id="right">
+<aside box-="square contain:!top" class="box" id="toc">
     <span is-="badge" variant-="background0">Table of Contents</span>
 
-    <div id="rsb-inner">
+    <div id="toc-inside">
         <ul>
             {
                 headings.map((heading) => (
@@ -20,4 +20,51 @@ const { headings } = Astro.props;
     </div>
 </aside>
 
-<style></style>
+<style>
+    span {
+        /* limit too long badge */
+        /* badge 3ch narrower than aside container */
+        overflow-x: hidden;
+        max-width: 25ch;
+    }
+
+    #toc {
+        /* fixed container width because I like it */
+        width: 28ch;
+        /* keep red content inside box */
+        /* aligned with article */
+        padding-bottom: 3lh;
+        /* pulls up the box border? */
+        height: 94vh;
+
+        /* FOR TESTING */
+        /* border: 2px solid green; */
+    }
+
+    #toc-inside {
+        /* overflow-y gives red bar scroll */
+        /* and keeps bottom text inside red box */
+        overflow-y: auto;
+        overflow-x: hidden;
+
+
+        /* visual */
+        padding-left: 1ch;
+        padding-right: 2ch;
+
+        margin-top: 1lh;
+        /* content 2ch narrower than container */
+        width: 26ch;
+
+        /* red's height matches green parent */
+        /* rather than its own content */
+        height: 100%;
+
+        /* FOR TESTING */
+        /* border: 2px dotted red; */
+    }
+
+    .box {
+        /* --box-border-color: var(--background1); */
+    }
+</style>

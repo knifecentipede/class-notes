@@ -9,6 +9,10 @@
     gap: 1lh;
 }
 
+/* TESTING */
+#file-content > * {
+    background-color: var(--background2);
+}
 
 /* legible table */
 #file-content table {

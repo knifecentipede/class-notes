@@ -12,7 +12,6 @@ const { headings } = Astro.props;
 ---
 
 <html lang="en" data-webtui-theme="gruvbox-dark-medium">
-
     <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -53,6 +52,8 @@ const { headings } = Astro.props;
 <style>
     body {
         display: block;
+
+        overflow-x: hidden;
     }
 
     html,
@@ -62,14 +63,18 @@ const { headings } = Astro.props;
         /* would create a window scroll bar */
         /* right now it's no good */
         overflow-y: hidden;
+
+        /* FOR TESTING */
+        /* border: 2px solid orangered; */
     }
 
     .global-outer {
         /* nav and content are vertical */
         display: block;
+        width: 100vw;
 
-        /* dev dimensions scaffolding */
-        /* border: 3px solid purple; */
+        /* FOR TESTING */
+        /* border: 3px solid orange; */
     }
 
     .global-columns {
@@ -82,7 +87,7 @@ const { headings } = Astro.props;
         padding-left: 1ch;
         padding-right: 1ch;
 
-        /* dev dimensions scaffolding */
+        /* FOR TESTING */
         /* border: 3px solid orange; */
     }
 </style>
