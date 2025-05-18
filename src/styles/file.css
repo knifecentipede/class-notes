@@ -1,24 +1,27 @@
-/* #file-content>* */
-#file-content>p,
-#file-content>ul,
-#file-content>ol,
-#file-content>hr,
-#file-content>pre.astro-code,
-#file-content>h2,
-#file-content>h3 {
-    margin-bottom: 1lh;
+/* CSS of article component contents */
+/* WHY FILE? WHY NOT IN ARTICLE? CONSIDER LATER */
+
+/* all text blocks are flex items with a gap */
+/* very simple and controllable! */
+#file-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1lh;
 }
 
+
+/* legible table */
 #file-content table {
     border-spacing: 2ch 0lh;
 
+    /* code in tables */
+    /* not natively possible */
     code {
         color: var(--gb-yellow);
         display: inline-block;
         background-color: var(--background1);
         padding-left: 1ch;
         padding-right: 1ch;
-
     }
 }
 
@@ -26,17 +29,36 @@
     list-style-type: none;
 }
 
+/* remove ul list markers */
 #file-content ul>li::before {
     content: "";
 }
 
-/* shiny navigation highlight */
+/* link navigation highlight thing */
+/* standard styling unlike dir navigation!!! */
 #file-content li a:hover,
 #file-content li a:focus {
     background-color: var(--background1);
 }
 
+/* allows you to annotate list links below */
 #file-content li a {
     display: block;
     width: 100%;
+}
+
+
+/* highlight advice segments */
+.alert {
+    color:var(--gb-red);
+    font-weight: bold;
+}
+
+.caution {
+    color:var(--gb-orange);
+    font-weight: bold;
+}
+
+.recommended {
+    color:var(--gb-green);
 }

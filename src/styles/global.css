@@ -1,12 +1,13 @@
+/* CSS of ANYTHING */
+
 @layer base, utils, components;
 
 @import "@webtui/css";
 @import "@webtui/theme-gruvbox";
-/* why is broken??? */
 /* @import "@webtui/theme-catpuccin"; */
 @import "@webtui/theme-nord";
 
-/* is this allowed? */
+/* legible text */
 @layer base {
     :root {
         --font-size: 17px;
@@ -14,7 +15,9 @@
     }
 }
 
+/* legible code blocks */
 @layer components {
+
     [data-webtui-theme|="gruvbox"] p code,
     [data-webtui-theme|="gruvbox"] ol code,
     [data-webtui-theme|="gruvbox"] ul code {
@@ -27,6 +30,13 @@
         padding: 1lh 1ch;
         word-wrap: break-word;
         white-space: pre-wrap;
-        /* margin-bottom: 1lh; */
+
+        /* code from webtui docs */
+        /* idk what it does but otherwise */
+        /* file.css content display flex */ 
+        /* makes code block very short */
+        overflow: unset !important;
+        /* that was in the docs code too idk */
+        /* display: flex; */
     }
 }
