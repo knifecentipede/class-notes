@@ -22,28 +22,22 @@ import "../styles/file.css";
 
 <style>
     article {
-        /* HEADER SLUG STRUGGLE ZONE */
-        
-        /* HEADER SLUG STRUGGLE ZONE */
-
         /* article resizes to take up all remaining space */
-        /* while sidebar doesn't */
         width: 100%;
-        /* keep red content inside box */
-        /* aligned with sidebar */
+
+        /* keep red content inside box aligned with sidebar */
         padding-bottom: 2lh;
 
-        /* when there's a very long word */
-        /* overflow-x makes red and green border not extend */
+        /* when there's a very long word overflow-x makes red and green border not extend */
         /* overflow-x: hidden; */
         /* UPDATE: caused red box problems with toc */
 
         /* overflow-y removes body scroll bar */
         /* overflow-y: hidden; */
         /* UPDATE: caused red box problems with toc */
-        /* UPDATE: commented out and scroll bar is still here? */
+        /* body scroll bar gone anyway?? */
 
-        /* pulls up the box border? */
+        /* pulls up the box border I think*/
         height: 94vh;
 
         /* FOR TESTING */
@@ -51,19 +45,16 @@ import "../styles/file.css";
     }
 
     #file-content {
-        /* HEADER SLUG STRUGGLE ZONE */
-        /* min-height: 100%; */
-        /*position: absolute; */
-        /* margin-top: 2lh;  */
-        /* height: 90%; */
-        max-width: 100%;
-        /* HEADER SLUG STRUGGLE ZONE */
+        /* THIS IS WHAT RESOLVES CONFLICT BETWEEN TOC AND */
+        /* ARTICLE'S COMMENTED OUT OVERFLOW PROPERTIES */
+        /* in the long word error scenario */
+        /* DO NOT REMOVE!!!!!!!!!!!!! */
+        word-break: break-all;
 
-        /* overflow-y gives red bar scroll */
-        /* and keeps bottom text inside red box */
+        /* overflow-y gives red bar scroll and keeps bottom text inside red box */
         /* DO NOT REMOVE!!!!!! */
         overflow-y: auto;
-        
+
         /* visual */
         padding: 2ch;
         /* not sure what it does */

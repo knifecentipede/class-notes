@@ -9,17 +9,16 @@
     gap: 1lh;
 }
 
-/* TESTING */
-#file-content > * {
+/* FOR TESTING (highlight all text blocks) */
+/* #file-content>* {
     background-color: var(--background2);
-}
+} */
 
 /* legible table */
 #file-content table {
     border-spacing: 2ch 0lh;
 
-    /* code in tables */
-    /* not natively possible */
+    /* styling code in tables not natively possible */
     code {
         color: var(--gb-yellow);
         display: inline-block;
@@ -54,15 +53,15 @@
 
 /* highlight advice segments */
 .alert {
-    color:var(--gb-red);
+    color: var(--gb-red);
     font-weight: bold;
 }
 
 .caution {
-    color:var(--gb-orange);
+    color: var(--gb-orange);
     font-weight: bold;
 }
 
 .recommended {
-    color:var(--gb-green);
+    color: var(--gb-green);
 }

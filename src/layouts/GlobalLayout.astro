@@ -52,29 +52,28 @@ const { headings } = Astro.props;
 <style>
     body {
         display: block;
-
+        /* remove outer horizontal scroll if too long word error */
         overflow-x: hidden;
     }
 
     html,
     body {
+
         display: block;
         /* if window resized too much vertically */
         /* would create a window scroll bar */
-        /* right now it's no good */
         overflow-y: hidden;
 
         /* FOR TESTING */
-        /* border: 2px solid orangered; */
+        border: 2px solid orangered;
     }
 
     .global-outer {
         /* nav and content are vertical */
         display: block;
-        width: 100vw;
 
         /* FOR TESTING */
-        /* border: 3px solid orange; */
+        border: 3px solid orange;
     }
 
     .global-columns {
