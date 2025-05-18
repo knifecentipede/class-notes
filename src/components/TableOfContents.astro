@@ -11,8 +11,12 @@ const { headings } = Astro.props;
             {
                 headings.map((heading) => (
                     <li class="toc-link">
-                        <a href={`#${heading.slug}`}>{heading.text}</a> (Level:{" "}
-                        {heading.depth})
+                        <a
+                            href={`#${heading.slug}`}
+                            class={`toc-h${heading.depth}`}
+                        >
+                            {heading.text}
+                        </a>
                     </li>
                 ))
             }
@@ -21,6 +25,9 @@ const { headings } = Astro.props;
 </aside>
 
 <style>
+    /* generally matches Files */
+
+    /* - LAYOUT - */
     span {
         /* limit too long badge */
         /* badge 3ch narrower than aside container */
@@ -62,7 +69,43 @@ const { headings } = Astro.props;
         /* border: 2px dotted red; */
     }
 
+    /* - STYLING BOX - */
     .box {
         /* --box-border-color: var(--background1); */
+    }
+
+    /* - STYLING LINKS - */
+    #toc-inside a {
+        /* content: ""; */
+        color: var(--gb-green);
+        text-decoration: none;
+    }
+
+    #toc-inside a:hover {
+        text-decoration: underline;
+    }
+
+    #toc-inside ul li::before {
+        content: "";
+    }
+
+    .toc-h2::before {
+        content: "##";
+    }
+
+    .toc-h3::before {
+        content: "###";
+    }
+
+    .toc-h4::before {
+        content: "####";
+    }
+
+    .toc-h5::before {
+        content: "#####";
+    }
+
+    .toc-h6::before {
+        content: "######";
     }
 </style>
