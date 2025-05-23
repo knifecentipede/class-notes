@@ -21,7 +21,10 @@
     [data-webtui-theme|="gruvbox"] p code,
     [data-webtui-theme|="gruvbox"] ol code,
     [data-webtui-theme|="gruvbox"] ul code {
-        color: var(--gb-yellow);
+        /* color: var(--gb-yellow); */
+        background-color: #24292e;
+        color: #e1e4e8;
+        /* overflow-x: auto; */
     }
 }
 
@@ -33,7 +36,7 @@
 
         /* code from webtui docs */
         /* idk what it does but otherwise */
-        /* item.css content display flex */ 
+        /* item.css content display flex */
         /* makes code block very short */
         overflow: unset !important;
         /* that was in the docs code too idk */
