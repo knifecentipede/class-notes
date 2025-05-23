@@ -1,12 +1,12 @@
 ---
-title: 'astro db: query string'
+title: 'astro db: search query string'
 ---
 
 "localhost:4321/books?q=words&column=title"
 
-## Search bar that redirects to results page
+## search bar redirect to results page
 
-In search bar component:
+search bar component:
 ```
 <form action="/books" method="GET" autocomplete="off">
     <label>
@@ -27,7 +27,7 @@ In search bar component:
     (...)
 ```
 
-In /books:
+/books:
 ```
 ---
 const search = Astro.url.searchParams.get("q");
@@ -44,11 +44,11 @@ switch (column) {
 ---
 ```
 
-## Search by link text
+## link text that's a search
 
  -> "localhost:4321/books?q=person&column=(link text)"
 
-In /books:
+/books:
 ```
 <a
     href={

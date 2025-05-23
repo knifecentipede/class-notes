@@ -2,7 +2,7 @@
 title: 'astro db: get the row you insert'
 ---
 
-It's called RETURNING
+aka *returning*
 
 ```
 let authorId;
@@ -17,7 +17,7 @@ authorId = insertedAuthor.map((a) => a.insertedId)[0];
 
 Does `.returning()` create a "return type"?
 
-w/o creating return type seen somewhere:
+w/o creating return type
 ```
 const resultId = (await db
     .insert(UsersTable)

@@ -1,0 +1,35 @@
+---
+title: "collection entry's mdx headers"
+---
+
+[id].astro
+
+`const { Content, headings } = await render(entry);`
+
+global layout.astro
+
+```
+const { headings } = Astro.props;
+---
+(...)
+{headings && <TableOfContents headings={headings} />}
+```
+
+table of contents.astro
+
+```
+const { headings } = Astro.props;
+---
+(...)
+<ul>
+    {
+        headings.map((heading) => (
+            <li>
+                <a href={`#${heading.slug}`}>
+                    {heading.text}
+                </a>
+            </li>
+        ))
+    }
+</ul>
+```

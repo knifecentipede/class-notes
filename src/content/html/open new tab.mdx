@@ -1,21 +1,22 @@
 ---
-title: 'open external link in a new tab'
+title: 'open link in new tab'
 ---
 
 using `target="_blank"`
 
 <span class="alert">ALERT:</span> this makes the website vulnerable to phishing attacks.
+In order to make your website secure **always add** `rel="noopener noreferrer"`
+
+`<a href="https://www.google.com/" target="_blank" rel="noopener noreferrer">Google</a>`
 
 Opening an external link in a new tab makes your website vulnerable.
 The site you link can gain access to the window containing your website 
 and can change it to display different webpage. This is called phishing. 
-In order to make your website secure **always add** `rel="noopener noreferrer"`
 
-```<a href="https://www.google.com/" target="_blank" rel="noopener noreferrer">Google</a>```
 
-## Open external links in a new tab by default
+## open external links in new tab by default
 
-in /src/scripts/open-tab.js
+/src/scripts/open-tab.js
 
 ```
 function setTargetBlankOnExternalLinks() {
@@ -33,7 +34,7 @@ function setTargetBlankOnExternalLinks() {
 setTargetBlankOnExternalLinks() // call this after the DOM is ready
 ```
 
-in global layout
+global layout
 ```
 <script>
     import "../scripts/open-tab.js";

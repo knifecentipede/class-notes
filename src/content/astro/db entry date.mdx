@@ -2,12 +2,12 @@
 title: 'astro db: get entry added date'
 ---
 
-in schema: 
+schema: 
 ```
 timeAdded: column.date({ default: NOW })
 ```
 
-in page html:
+page html:
 ```
 {frontmatter.Book.timeAdded.toISOString().replace("T"," ").substring(0, 19)}
 ```

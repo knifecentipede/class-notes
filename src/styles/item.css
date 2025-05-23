@@ -32,23 +32,23 @@
 }
 
 /* remove ul list markers */
+/* UPDATE: maybe don't do that */
 #item-content ul>li::before {
-    content: "";
+    /* content: ""; */
 }
 
 /* link navigation highlight thing */
 /* standard styling unlike dir navigation!!! */
 #item-content li a:hover,
 #item-content li a:focus {
-    background-color: var(--background1);
+    /* background-color: var(--foreground2); */
 }
 
 /* allows you to annotate list links below */
 #item-content li a {
-    display: block;
-    width: 100%;
+    /* display: block; */
+    /* width: 100%; */
 }
-
 
 /* highlight advice segments */
 .alert {
@@ -63,4 +63,5 @@
 
 .recommended {
     color: var(--gb-green);
+    font-weight: bold;
 }

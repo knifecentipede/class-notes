@@ -1,0 +1,18 @@
+---
+title: 'link to header'
+---
+
+aka anchor link
+
+```
+<a href={`#${heading.slug}`}>
+    {heading.text}
+</a>
+```
+
+## anchor links make article element move
+
+anchor links can conflict with `overflow: hidden` on the article and cause this behavior apparently.
+if you have overflow-x and overflow-y try removing it and using `word-break: break-word;`
+on article content instead if possible
+
