@@ -21,7 +21,6 @@
     [data-webtui-theme|="gruvbox"] p code,
     [data-webtui-theme|="gruvbox"] ol code,
     [data-webtui-theme|="gruvbox"] ul code {
-        /* color: var(--gb-yellow); */
         background-color: #24292e;
         color: #e1e4e8;
         /* overflow-x: auto; */
@@ -41,5 +40,19 @@
         overflow: unset !important;
         /* that was in the docs code too idk */
         /* display: flex; */
+    }
+}
+
+/* default of gruvbox which only applies to p a */
+@layer components {
+    [data-webtui-theme|="gruvbox"] #item-content a {
+        color: var(--gb-blue);
+        text-decoration: underline;
+    }
+}
+
+@layer components {
+    [data-webtui-theme|="gruvbox"] #item-content a:hover {
+        color: var(--gb-aqua);
     }
 }
