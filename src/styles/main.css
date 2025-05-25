@@ -1,13 +1,8 @@
 /* CSS of main content */
 @layer base, utils, components;
 @import "@webtui/css";
-@import "@webtui/theme-gruvbox";
-@import '@webtui/theme-catppuccin';
-@import "@webtui/theme-nord";
-
 
 @layer components {
-
     /* GRUVBOX */
     [data-webtui-theme|="gruvbox"] {
         #main-content .alert {
@@ -67,8 +62,6 @@
 .caution,
 .advice {
     width: fit-content;
-    /* --badge-color: var(--nord11);
-    --badge-text: var(--background0); */
 }
 
 /* FOR TESTING (highlight all text blocks) */

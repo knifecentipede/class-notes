@@ -1,6 +1,7 @@
 ---
 // headings destination from browse mdx page: [id].astro
 const { headings } = Astro.props;
+import "../styles/tableofcontents.css";
 ---
 
 <aside box-="square contain:!top" class="box" id="toc">
@@ -87,7 +88,7 @@ const { headings } = Astro.props;
     }
 
     #toc-inside a:hover {
-        /* text-decoration: underline; */
+        text-decoration: underline;
     }
 
     #toc-inside ul li::before {
