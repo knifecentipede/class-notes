@@ -1,51 +1,74 @@
 /* CSS of main content */
 @layer base, utils, components;
-
 @import "@webtui/css";
+@import "@webtui/theme-gruvbox";
+@import '@webtui/theme-catppuccin';
+@import "@webtui/theme-nord";
+
 
 @layer components {
 
     /* GRUVBOX */
     [data-webtui-theme|="gruvbox"] {
-
-        /* attention segments highlighter */
-        .alert {
-            color: var(--gb-red);
+        #main-content .alert {
+            --badge-color: var(--gb-red);
+            --badge-text: var(--background0);
         }
 
-        .caution {
-            color: var(--gb-orange);
+        #main-content .caution {
+            --badge-color: var(--gb-yellow);
+            --badge-text: var(--background0);
         }
 
-        .advice {
-            color: var(--gb-green);
+        #main-content .advice {
+            --badge-color: var(--gb-green);
+            --badge-text: var(--background0);
         }
     }
 
     /* CATPPUCCIN */
     [data-webtui-theme|="catppuccin"] {
-
-        /* attention segments highlighter */
-        .alert {
-            color: var(--red);
+        #main-content .alert {
+            --badge-color: var(--maroon);
+            --badge-text: var(--background0);
         }
 
-        .caution {
-            color: var(--yellow);
+        #main-content .caution {
+            --badge-color: var(--pink);
+            --badge-text: var(--background0);
         }
 
-        .advice {
-            color: var(--green);
+        #main-content .advice {
+            --badge-color: var(--mauve);
+            --badge-text: var(--background0);
+        }
+    }
+
+    /* NORD */
+    [data-webtui-theme|="nord"] {
+        #main-content .alert {
+            --badge-color: var(--nord11);
+            --badge-text: var(--background0);
+        }
+
+        #main-content .caution {
+            --badge-color: var(--nord12);
+            --badge-text: var(--background0);
+        }
+
+        #main-content .advice {
+            --badge-color: var(--nord13);
+            --badge-text: var(--background0);
         }
     }
 }
 
-/* all text blocks are flex items with a gap */
-/* very simple and controllable! */
-#main-content {
-    display: flex;
-    flex-direction: column;
-    gap: 1lh;
+.alert,
+.caution,
+.advice {
+    width: fit-content;
+    /* --badge-color: var(--nord11);
+    --badge-text: var(--background0); */
 }
 
 /* FOR TESTING (highlight all text blocks) */
@@ -56,6 +79,7 @@
 /* legible table */
 #main-content table {
     border-spacing: 2ch 0lh;
+
     /* styling code in tables not natively possible */
     code {
         display: inline-block;
@@ -65,13 +89,13 @@
 }
 
 
-/* link navigation highlight thing */
+/* link highlight thing */
 /* default link styling!!! */
 #main-content ul li a:hover {
     background-color: var(--background1);
 }
 
 #main-content ul li a {
-        display: inline-block;
-        width: calc(100% - 2ch);
+    display: inline-block;
+    width: calc(100% - 2ch);
 }

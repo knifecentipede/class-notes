@@ -44,13 +44,18 @@ import "../styles/main.css";
     }
 
     #main-content {
+        /* all text blocks are flex items with a gap */
+        /* very simple and controllable! */
+        display: flex;
+        flex-direction: column;
+        gap: 1lh;
+
         /* THIS IS WHAT RESOLVES CONFLICT BETWEEN TOC AND */
         /* MAIN'S COMMENTED OUT OVERFLOW PROPERTIES */
         /* in the long word error scenario */
         /* DO NOT REMOVE!!!!!!!!!!!!! */
         /* word-break: break-all; */
         word-break: break-word;
-
 
         /* overflow-y gives red bar scroll and keeps bottom text inside red box */
         /* DO NOT REMOVE!!!!!! */
