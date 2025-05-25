@@ -1,28 +1,27 @@
 ---
 // Usage: <Item title="# /dir/title" />
 const { path } = Astro.props;
-// WHY NOT ARTICLE CSS? CONSIDER LATER
-import "../styles/item.css";
+import "../styles/main.css";
 ---
 
-<article box-="square contain:!top" class="box">
+<main box-="square contain:!top" class="box">
     <!-- badge -->
     <span is-="badge" variant-="background0">
         <h1>{path}</h1>
     </span>
 
     <!-- below badge -->
-    <div id="item-content">
+    <div id="main-content">
         <!-- 4. index.astro arrives here -->
         <slot />
     </div>
 
     <!-- there's no reason for anything to be here -->
-</article>
+</main>
 
 <style>
-    article {
-        /* article resizes to take up all remaining space */
+    main {
+        /* main resizes to take up all remaining space */
         width: 100%;
 
         /* keep red content inside box aligned with sidebar */
@@ -44,9 +43,9 @@ import "../styles/item.css";
         /* border: 2px solid green; */
     }
 
-    #item-content {
+    #main-content {
         /* THIS IS WHAT RESOLVES CONFLICT BETWEEN TOC AND */
-        /* ARTICLE'S COMMENTED OUT OVERFLOW PROPERTIES */
+        /* MAIN'S COMMENTED OUT OVERFLOW PROPERTIES */
         /* in the long word error scenario */
         /* DO NOT REMOVE!!!!!!!!!!!!! */
         /* word-break: break-all; */

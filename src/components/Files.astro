@@ -8,27 +8,27 @@
     <div id="files-inside">
         <summary>notes</summary>
         <ul marker-="open tree">
-            <li><a href="/notes/html/">HTML</a></li>
-            <li><a href="/notes/css/">CSS</a></li>
-            <li><a href="/notes/js/">JS</a></li>
-            <li><a href="/notes/astro/">Astro</a></li>
-            <li><a href="/notes/github/">Github</a></li>
-            <li><a href="/notes/other/">Other</a></li>
+            <li class="move-dir"><a href="/notes/html/">HTML</a></li>
+            <li class="move-dir"><a href="/notes/css/">CSS</a></li>
+            <li class="move-dir"><a href="/notes/js/">JS</a></li>
+            <li class="move-dir"><a href="/notes/astro/">Astro</a></li>
+            <li class="move-dir"><a href="/notes/github/">Github</a></li>
+            <li class="move-dir"><a href="/notes/other/">Other</a></li>
         </ul>
 
         <br />
         <summary>help</summary>
         <ul marker-="open tree">
-            <li><a href="/help/tools/">Tools</a></li>
-            <li><a href="/help/curios/">Curios</a></li>
-            <li><a href="/help/other/">Other</a></li>
+            <li class="move-dir"><a href="/help/tools/">Tools</a></li>
+            <li class="move-dir"><a href="/help/curios/">Curios</a></li>
+            <li class="move-dir"><a href="/help/other/">Other</a></li>
         </ul>
 
         <br />
         <summary>study</summary>
         <ul marker-="open tree">
-            <li><a href="/study/classes/">Classes</a></li>
-            <li><a href="/study/lessons/">Lessons</a></li>
+            <li class="move-dir"><a href="/study/classes/">Classes</a></li>
+            <li class="move-dir"><a href="/study/lessons/">Lessons</a></li>
         </ul>
     </div>
 </aside>
@@ -45,7 +45,7 @@
         /* fixed container width because I like it */
         width: 19ch;
         /* keep red content inside box */
-        /* aligned with article */
+        /* aligned with main */
         padding-bottom: 3lh;
         /* pulls up the box border? */
         height: 94vh;
@@ -86,15 +86,6 @@
 
     .box {
         /* --box-border-color: var(--background1); */
-    }
-
-    /* shiny navigation highlight */
-    #files-inside ul li:hover,
-    #files-inside ul li:focus {
-        background-color: var(--background1);
-        a {
-            color: var(--gb-purple);
-        }
     }
 
     /* please do not break my stuff */

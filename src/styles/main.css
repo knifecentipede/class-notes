@@ -1,0 +1,77 @@
+/* CSS of main content */
+@layer base, utils, components;
+
+@import "@webtui/css";
+
+@layer components {
+
+    /* GRUVBOX */
+    [data-webtui-theme|="gruvbox"] {
+
+        /* attention segments highlighter */
+        .alert {
+            color: var(--gb-red);
+        }
+
+        .caution {
+            color: var(--gb-orange);
+        }
+
+        .advice {
+            color: var(--gb-green);
+        }
+    }
+
+    /* CATPPUCCIN */
+    [data-webtui-theme|="catppuccin"] {
+
+        /* attention segments highlighter */
+        .alert {
+            color: var(--red);
+        }
+
+        .caution {
+            color: var(--yellow);
+        }
+
+        .advice {
+            color: var(--green);
+        }
+    }
+}
+
+/* all text blocks are flex items with a gap */
+/* very simple and controllable! */
+#main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1lh;
+}
+
+/* FOR TESTING (highlight all text blocks) */
+/* #main-content>* {
+    background-color: var(--background2);
+} */
+
+/* legible table */
+#main-content table {
+    border-spacing: 2ch 0lh;
+    /* styling code in tables not natively possible */
+    code {
+        display: inline-block;
+        padding-left: 1ch;
+        padding-right: 1ch;
+    }
+}
+
+
+/* link navigation highlight thing */
+/* default link styling!!! */
+#main-content ul li a:hover {
+    background-color: var(--background1);
+}
+
+#main-content ul li a {
+        display: inline-block;
+        width: calc(100% - 2ch);
+}

@@ -1,0 +1,15 @@
+/* CSS of browse category */
+
+.category {
+    list-style-type: none;
+}
+
+.category li::before {
+    content: "";
+}
+
+/* please do not break my stuff */
+.category li a {
+    display: block;
+    width: 100%;
+}

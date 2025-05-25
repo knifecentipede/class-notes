@@ -1,7 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import Files from "../components/Files.astro";
-import Item from "../components/Item.astro";
+import Main from "../components/Main.astro";
 import TableOfContents from "../components/TableOfContents.astro";
 
 import "../styles/global.css";
@@ -11,13 +11,17 @@ const { path } = Astro.props;
 const { headings } = Astro.props;
 ---
 
-<html lang="en" data-webtui-theme="gruvbox-dark-hard">
+<html data-webtui-theme="gruvbox-dark-hard">
+<!-- <html data-webtui-theme="catppuccin-mocha"> -->
+
+<!-- <html data-webtui-theme="gruvbox-light-soft"> -->
+<!-- <html data-webtui-theme="nord"> -->
+
     <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
-        <!-- <title>{title}</title> -->
     </head>
 
     <body>
@@ -26,15 +30,15 @@ const { headings } = Astro.props;
             <div class="global-columns">
                 <Files />
 
-                <!-- 5. render the completed Item component-->
-                <Item path={path}>
+                <!-- 5. render the completed Main component-->
+                <Main path={path}>
                     <!-- 2. index.astro arrives here -->
                     <!-- make sure only what's intended can be here! -->
                     <!-- <slot name="words" /> -->
                     <slot />
-                    <!-- 3. call Item on <Item>'s contents -->
+                    <!-- 3. call Item on <Main>'s contents -->
                     <!-- i.e index.astro -->
-                </Item>
+                </Main>
 
                 <!-- if headings were received by global layout -->
                 <!-- i.e page contents were a markdown file -->
@@ -58,7 +62,6 @@ const { headings } = Astro.props;
 
     html,
     body {
-
         display: block;
         /* if window resized too much vertically */
         /* would create a window scroll bar */

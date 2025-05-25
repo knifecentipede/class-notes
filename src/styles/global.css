@@ -1,29 +1,13 @@
-/* CSS of ANYTHING */
-
 @layer base, utils, components;
-
 @import "@webtui/css";
 @import "@webtui/theme-gruvbox";
-/* @import "@webtui/theme-catpuccin"; */
+@import '@webtui/theme-catppuccin';
 @import "@webtui/theme-nord";
 
-/* legible text */
 @layer base {
     :root {
         --font-size: 17px;
         --line-height: 1.2;
-    }
-}
-
-/* legible code blocks */
-@layer components {
-
-    [data-webtui-theme|="gruvbox"] p code,
-    [data-webtui-theme|="gruvbox"] ol code,
-    [data-webtui-theme|="gruvbox"] ul code {
-        background-color: #24292e;
-        color: #e1e4e8;
-        /* overflow-x: auto; */
     }
 }
 
@@ -35,24 +19,16 @@
 
         /* code from webtui docs */
         /* idk what it does but otherwise */
-        /* item.css content display flex */
+        /* main.css content display flex */
         /* makes code block very short */
         overflow: unset !important;
         /* that was in the docs code too idk */
         /* display: flex; */
     }
-}
 
-/* default of gruvbox which only applies to p a */
-@layer components {
-    [data-webtui-theme|="gruvbox"] #item-content a {
-        color: var(--gb-blue);
-        text-decoration: underline;
-    }
-}
-
-@layer components {
-    [data-webtui-theme|="gruvbox"] #item-content a:hover {
-        color: var(--gb-aqua);
+    /* move dir highlighter */
+    .move-dir:hover,
+    .move-dir:focus {
+        background-color: var(--background1);
     }
 }

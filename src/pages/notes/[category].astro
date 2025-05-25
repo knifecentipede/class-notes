@@ -1,5 +1,5 @@
 ---
-import "../../styles/browse-collection.css";
+import "../../styles/category.css";
 import GlobalLayout from "../../layouts/GlobalLayout.astro";
 
 export const prerender = false; // Not needed in 'server' mode
@@ -11,10 +11,10 @@ const collection = await getCollection(category);
 ---
 
 <GlobalLayout path=`${Astro.url.pathname}`>
-    <ul class="browse-collection">
+    <ul class="category">
         {
             collection.map((file) => (
-                <li>
+                <li class="move-dir">
                     <a href={`/notes/${category}/${file.id}`}>/{file.data.title}</a>
                 </li>
             ))
