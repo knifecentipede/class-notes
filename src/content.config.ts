@@ -36,8 +36,8 @@ const github = defineCollection({
     })
 });
 
-const other = defineCollection({
-    loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/other" }),
+const undefined = defineCollection({
+    loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/undefined" }),
     schema: z.object({
         title: z.string(),
     })
@@ -45,5 +45,5 @@ const other = defineCollection({
 
 // Export a single `collections` object to register your collection(s)
 export const collections = {
-    html, css, js, astro, github, other
+    html, css, js, astro, github, undefined
 };

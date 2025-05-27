@@ -3,6 +3,7 @@ import Header from "../components/Header.astro";
 import Files from "../components/Files.astro";
 import Main from "../components/Main.astro";
 import TableOfContents from "../components/TableOfContents.astro";
+import ThemeSelect from "../components/ThemeSelect.astro";
 
 import "../styles/global.css";
 
@@ -11,12 +12,7 @@ const { path } = Astro.props;
 const { headings } = Astro.props;
 ---
 
-<!-- <html data-webtui-theme="gruvbox-dark-hard"> -->
-<!-- <html data-webtui-theme="catppuccin-mocha"> -->
 <html data-webtui-theme="catppuccin">
-<!-- <html data-webtui-theme="gruvbox-light-soft"> -->
-<!-- <html data-webtui-theme="nord"> -->
-
     <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -26,6 +22,7 @@ const { headings } = Astro.props;
 
     <body>
         <div class="global-outer">
+            <ThemeSelect />
             <Header />
             <div class="global-columns">
                 <Files />

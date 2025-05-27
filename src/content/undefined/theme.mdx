@@ -1,0 +1,27 @@
+---
+title: 'theme toggle'
+---
+
+```
+<script>
+    const buttons = document.querySelectorAll("button");
+    const htmlTag = document.querySelector("html");
+
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+        let themeName = localStorage.getItem("theme");
+        htmlTag.setAttribute("data-webtui-theme", themeName);
+    }
+
+    for (let i of buttons) {
+        i.addEventListener("click", function () {
+            const themeName = i.getAttribute("data-value");
+            htmlTag.setAttribute("data-webtui-theme", themeName);
+            window.localStorage.setItem("theme", themeName);
+        });
+    }
+</script>
+```
+
+[Flash of inAccurate coloR Theme (FART) | CSS-Tricks](https://css-tricks.com/flash-of-inaccurate-color-theme-fart/)
+
+[Dark mode in 5 minutes, with inverted lightness variables • Lea Verou](https://lea.verou.me/blog/2021/03/inverted-lightness-variables/)
