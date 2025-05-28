@@ -1,0 +1,85 @@
+---
+
+---
+
+<section id="border-select">
+    <label>
+        <input
+            type="radio"
+            name="border-select"
+            id="borderless"
+            data-value="borderless"
+        />
+        Borderless
+    </label>
+    <label>
+        <input
+            type="radio"
+            name="border-select"
+            id="borderful"
+            data-value="borderful"
+            checked
+        />
+        Borderful
+    </label>
+</section>
+
+<script is:inline>
+    // <script>
+    // localStorage.clear();
+
+    const borderless = document.getElementById("borderless");
+    const borderful = document.getElementById("borderful");
+
+    const boxess = document.querySelectorAll(".box");
+    const boxes = Array.from(document.getElementsByClassName("box"));
+
+    if (
+        typeof localStorage !== "undefined" &&
+        localStorage.getItem("border-style")
+    ) {
+        let borderStyle = localStorage.getItem("border-style");
+        if (borderStyle == "borderless") {
+            borderless.checked = true;
+            // set css here
+            boxes.forEach((box) => {
+                box.classList.add("borderless");
+                //     box.classList.toggle("borderless");
+            });
+        }
+        if (borderStyle == "borderful") {
+            borderless.checked = false;
+            // set css here
+            boxes.forEach((box) => {
+                box.classList.remove("borderless");
+                //     box.classList.toggle("borderless");
+            });
+        }
+    }
+
+    borderless.addEventListener("click", function () {
+        borderless.checked = true;
+
+        // set css here
+        boxes.forEach((box) => {
+            box.classList.add("borderless");
+            //     box.classList.toggle("borderless");
+        });
+
+        window.localStorage.setItem("border-style", "borderless");
+    });
+
+    borderful.addEventListener("click", function () {
+        borderless.checked = false;
+
+        // set css here
+        boxes.forEach((box) => {
+            box.classList.remove("borderless");
+            //     box.classList.toggle("borderless");
+        });
+
+        window.localStorage.setItem("border-style", "borderful");
+    });
+</script>
+
+<style></style>

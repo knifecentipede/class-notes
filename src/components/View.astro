@@ -1,0 +1,17 @@
+---
+import ThemeSelect from "./ThemeSelect.astro";
+import BorderSelect from "./BorderSelect.astro";
+---
+
+<section box-="square contain:!top" class="box" id="view">
+    <span is-="badge" variant-="background0">View</span>
+    <ThemeSelect />
+    <BorderSelect />
+</section>
+
+<style>
+    #view {
+        width: 50ch;
+        height: 15lh;
+    }
+</style>

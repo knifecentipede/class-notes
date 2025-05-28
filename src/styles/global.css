@@ -31,5 +31,14 @@
     .move-dir:focus {
         background-color: var(--background1);
     }
-    
+
+
+    .box {
+        --box-border-color: var(--foreground0);
+    }
+
+    .box.borderless {
+        --box-border-color: var(--background1);
+    }
+
 }
