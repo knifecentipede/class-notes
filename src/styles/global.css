@@ -14,7 +14,9 @@
 @layer components {
     pre.astro-code {
         /* webtui v0.1.1 broke code blocks idk */
-        --pre-background: transparent;
+        /* --pre-background: transparent; */
+        /* background-color: rgba(0, 0, 0, 0.5) !important; */
+        background-color: linear-gradient(to bottom, transparent, transparent .5lh, var(--pre-background) .5lh, var(--pre-background) calc(100% - .5lh), transparent calc(100% - .5lh), transparent) !important;
 
         padding: 1lh 1ch;
         word-wrap: break-word;
@@ -27,6 +29,11 @@
         overflow: unset !important;
         /* that was in the docs code too idk */
         /* display: flex; */
+
+        /* webtui v0.1.1 broke code blocks idk */
+        >* {
+            color: var(--foreground0);
+        }
     }
 
     /* move dir highlighter */
