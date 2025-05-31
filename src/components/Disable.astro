@@ -1,0 +1,26 @@
+---
+// Fullscreen overlay that prevents you from interacting
+// with the page under a menu
+---
+
+<span class="disable"> </span>
+
+<style>
+    .disable.disabled {
+        display: block;
+        position: absolute;
+        /* top: 0px; */
+        top: 1lh;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+
+        background-color: rgba(0, 0, 0, 0);
+        /* background-color: rgba(0, 0, 0, 0.5); */
+        z-index: 8;
+    }
+
+    .disable {
+        display: none;
+    }
+</style>

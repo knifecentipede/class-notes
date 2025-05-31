@@ -4,18 +4,21 @@
 
 <header>
     <a href="/" is-="badge">Index</a>
-    <a href="/view" is-="badge">View</a>
     <a href="/search" is-="badge">Search</a>
+    <button id="view-btn" size-="small">View</button>
 </header>
+
 
 <style>
     summary {
-        color: var(--background2)
+        color: var(--background2);
     }
 
     header {
         display: flex;
         background-color: var(--foreground0);
+
+        z-index: 99;
     }
 
     /* link button hell */

@@ -3,8 +3,6 @@ import Header from "../components/Header.astro";
 import Files from "../components/Files.astro";
 import Main from "../components/Main.astro";
 import TableOfContents from "../components/TableOfContents.astro";
-import ThemeSelect from "../components/ThemeSelect.astro";
-import BorderSelect from "../components/BorderSelect.astro";
 import View from "../components/View.astro";
 
 import "../styles/global.css";
@@ -14,7 +12,7 @@ const { path } = Astro.props;
 const { headings } = Astro.props;
 ---
 
-<html data-webtui-theme="catppuccin">
+<html data-webtui-theme="gruvbox-dark-hard">
     <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -24,8 +22,6 @@ const { headings } = Astro.props;
 
     <body>
         <div class="global-outer">
-            <!-- <View /> -->
-
             <Header />
             <div class="global-columns">
                 <Files />
@@ -44,8 +40,7 @@ const { headings } = Astro.props;
                 <!-- i.e page contents were a markdown file -->
                 <!-- display toc sidebar and pass headings -->
                 {headings && <TableOfContents headings={headings} />}
-            <View />
-
+                <View />
             </div>
         </div>
     </body>

@@ -1,20 +1,93 @@
 ---
 import ThemeSelect from "./ThemeSelect.astro";
 import BorderSelect from "./BorderSelect.astro";
+import Disable from "./Disable.astro";
 ---
 
-<section box-="square contain:!top" class="box" id="view">
+<Disable />
+<section box-="square" shear-="top" class="box closed" id="view-body">
     <span is-="badge" variant-="background0">View</span>
+    <span is-="badge" variant-="background0" id="view-close">[x]</span>
     <ThemeSelect />
+    <hr />
     <BorderSelect />
+    <hr />
+    <button id="view-reset" size-="small">Reset</button>
 </section>
 
+<script>
+    const viewBtn = document.getElementById("view-btn");
+    const viewBody = document.getElementById("view-body");
+    const viewClose = document.getElementById("view-close");
+    const viewReset = document.getElementById("view-reset");
+
+    const disable = document.querySelector(".disable");
+
+    viewBtn.addEventListener("click", () => {
+        viewBody.classList.toggle("closed");
+        viewBody.classList.toggle("open");
+
+        // <Disable />
+        disable.classList.toggle("disabled");
+    });
+
+    viewClose.addEventListener("click", function () {
+        viewBody.classList.toggle("closed");
+        viewBody.classList.toggle("open");
+
+        // <Disable />
+        disable.classList.toggle("disabled");
+    });
+
+    viewReset.addEventListener("click", () => {
+        // ez solution
+        localStorage.clear();
+        location.reload();
+        document.getElementById("borderful").checked = true;
+    });
+</script>
+
 <style>
-    #view {
-        width: 33ch;
-        height: 15lh;
+    #view-body {
+        width: 35ch;
+        height: 19lh;
+        background-color: var(--background0);
 
         position: absolute;
-        background-color: var(--background0);
+        z-index: 10;
+    }
+
+    #view-body.closed {
+        display: none;
+    }
+
+    #view-body.open {
+        display: block;
+    }
+
+    #view-close {
+        float: right;
+    }
+
+    #view-reset {
+        margin-left: 1ch;
+        background-color: var(--foreground2);
+    }
+
+    /* from webtui docs css */
+    hr {
+        display: block;
+        padding: 0.5lh 0;
+        width: 100%;
+        border: none;
+        background-image: linear-gradient(
+            0deg,
+            transparent 0,
+            transparent calc(0.5lh - 1px),
+            var(--box-border-color) calc(0.5lh - 1px),
+            var(--box-border-color) calc(0.5lh + 1px),
+            transparent calc(0.5lh + 1px),
+            transparent
+        );
     }
 </style>

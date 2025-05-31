@@ -4,46 +4,47 @@
 
 <section id="theme-select">
     <!-- gruvbox -->
-    <button id="gruvbox-dark-soft" data-value="gruvbox-dark-soft"
+    <button class="themes" data-value="gruvbox-dark-soft"
         >gruvbox-dark-soft</button
     >
-    <button id="gruvbox-dark-medium" data-value="gruvbox-dark-medium"
+    <button class="themes" data-value="gruvbox-dark-medium"
         >gruvbox-dark-medium</button
     >
-    <button id="gruvbox-dark-hard" data-value="gruvbox-dark-hard"
+    <button class="themes" data-value="gruvbox-dark-hard"
         >gruvbox-dark-hard</button
     >
-    <button id="gruvbox-light-soft" data-value="gruvbox-light-soft"
+    <button class="themes" data-value="gruvbox-light-soft"
         >gruvbox-light-soft</button
     >
-    <button id="gruvbox-light-medium" data-value="gruvbox-light-medium"
+    <button class="themes" data-value="gruvbox-light-medium"
         >gruvbox-light-medium</button
     >
-    <button id="gruvbox-light-hard" data-value="gruvbox-light-hard"
+    <button class="themes" data-value="gruvbox-light-hard"
         >gruvbox-light-hard</button
     >
     <!-- catppuccin -->
-    <button id="catppuccin" data-value="catppuccin">catppuccin</button>
-    <button id="catppuccin-mocha" data-value="catppuccin-mocha"
+    <button class="themes" data-value="catppuccin">catppuccin</button>
+    <button class="themes" data-value="catppuccin-mocha"
         >catppuccin-mocha</button
     >
-    <button id="catppuccin-macchiato" data-value="catppuccin-macchiato"
+    <button class="themes" data-value="catppuccin-macchiato"
         >catppuccin-macchiato</button
     >
-    <button id="catppuccin-frappe" data-value="catppuccin-frappe"
+    <button class="themes" data-value="catppuccin-frappe"
         >catppuccin-frappe</button
     >
-    <button id="catppuccin-latte" data-value="catppuccin-latte"
+    <button class="themes" data-value="catppuccin-latte"
         >catppuccin-latte</button
     >
 
     <!-- nord -->
-    <button id="nord" data-value="nord">nord</button>
+    <button class="themes" data-value="nord">nord</button>
 </section>
 
 <script is:inline>
-    // <script>
-    const buttons = document.querySelectorAll("button");
+    // localStorage.clear();
+
+    const buttons = document.querySelectorAll(".themes");
     const htmlTag = document.querySelector("html");
 
     if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
@@ -61,13 +62,20 @@
 </script>
 
 <style>
-    /* ALIGN WORDS LEFT */
-
     #theme-select {
         display: flex;
         flex-direction: column;
         width: fit-content;
         /* match number of themes */
         height: 12lh;
+
+        /* border: 1px red solid; */
+    }
+
+    .themes {
+        /* text color broke at webtui v0.1.1 */
+        color: var(--foreground0);
+        text-align: left;
+        justify-content: flex-start;
     }
 </style>

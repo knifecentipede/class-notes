@@ -25,13 +25,8 @@
 </section>
 
 <script is:inline>
-    // <script>
-    // localStorage.clear();
-
     const borderless = document.getElementById("borderless");
     const borderful = document.getElementById("borderful");
-
-    const boxess = document.querySelectorAll(".box");
     const boxes = Array.from(document.getElementsByClassName("box"));
 
     if (
@@ -82,4 +77,8 @@
     });
 </script>
 
-<style></style>
+<style>
+    #border-select {
+        text-align: center;
+    }
+</style>
