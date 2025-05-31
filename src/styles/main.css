@@ -71,14 +71,14 @@
 
 /* legible table */
 #main-content table {
-    border-spacing: 2ch 0lh;
+    /* border-spacing: 2ch 0lh; */
 
     /* styling code in tables not natively possible */
-    code {
+    /* code {
         display: inline-block;
         padding-left: 1ch;
         padding-right: 1ch;
-    }
+    } */
 }
 
 

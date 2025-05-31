@@ -13,6 +13,9 @@
 
 @layer components {
     pre.astro-code {
+        /* webtui v0.1.1 broke code blocks idk */
+        --pre-background: transparent;
+
         padding: 1lh 1ch;
         word-wrap: break-word;
         white-space: pre-wrap;
