@@ -4,10 +4,9 @@
 
 <header>
     <a href="/" is-="badge">Index</a>
-    <a href="/search" is-="badge">Search</a>
+    <!-- <a href="/search" is-="badge">Search</a> -->
     <button id="view-btn" size-="small">View</button>
 </header>
-
 
 <style>
     summary {
@@ -18,18 +17,20 @@
         display: flex;
         background-color: var(--foreground0);
 
-        z-index: 99;
-    }
+        a {
+            text-decoration: none;
+        }
 
-    /* link button hell */
-    a {
-        text-decoration: none;
-    }
+        [is-~="badge"]:hover,
+        [is-~="badge"]:focus {
+            --badge-text: var(--foreground0);
+            --badge-color: var(--background2);
+        }
 
-    /* THEME-SPECIFIC COLORS */
-    a:hover,
-    a:focus {
-        color: var(--foreground0);
-        background-color: var(--background2);
+        button:hover,
+        button:focus {
+            --button-primary: var(--background2);
+            --button-secondary: var(--foreground0);
+        }
     }
 </style>
